@@ -1,0 +1,599 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #500073;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.ripple {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: scale(0);
+    animation: ripple-animation 1s ease-out forwards;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+.star {
+    width: 6px;
+    /* Set width for the star */
+    height: 6px;
+    /* Set height for the star */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: azure;
+    /* Set a color for the star */
+    box-shadow: 0px 0px 10px 2px azure;
+    /* Create a glowing effect */
+    position: absolute;
+    /* Ensure positioning works for stars */
+    animation: twinkle 2s infinite ease-in-out;
+    /* Optional twinkle animation */
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 447px) {
+    .nave{
+        padding: 20px;
+    }
+    .nav li {
+            font-size: 3vw;
+            height: 23px;
+            justify-content: center;
+        }
+
+
+        .myWork {
+            padding: 1vh .04rem;
+            
+        }
+
+        .myWork1{
+            margin-left: 2vw;
+        }
+
+        .myWork2{
+            margin-left: 6vw;
+            font-size: 3vw;
+        }
+
+        .myWork3{
+            margin-left: 7vw;
+            font-size: 2.5vw;
+            font: bold;
+        }
+
+        .myWork4{
+            margin-top: .3rem;
+            gap: 5vw;
+            font-size: .8rem;
+            padding-left: .02rem;
+        }
+
+        .myWork5{
+            height: 5rem;
+            width: 8rem;
+        }
+
+        .myWork6{
+            width: 12rem;
+        }
+
+        .myWork7{
+            padding-top: -5rem;
+        }
+
+        .myWork8{
+            font-size: 1rem;
+        }
+
+        .about1{
+            margin-left: 0;
+        }
+    
+        .about2{
+            padding: 13px 5vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center; 
+            gap: 1rem;
+        }
+
+        .hr{
+            margin-left: 10%;
+            width: 80%;
+        }
+
+        .about3{
+            text-align: center;
+            width: 100%;
+        }
+        
+        .aboute2{
+            margin-top: 15px;
+            gap: .2rem;
+            line-height: 22px;
+        }
+
+        .aboute3{
+            gap: .2rem;
+            line-height: 22px;
+        }
+
+        .conText{
+            font-size: larger;
+        }
+
+        .con{
+            display: flex;
+            flex-direction: column;
+            margin-top: 3%;
+            min-height: auto;
+        }
+
+        .gText {
+    opacity: 1;
+    transform: scale(1) translateY(-50%);
+  }
+
+  .down{
+    background-color: rgb(81, 78, 78);
+  }
+
+  .wForm{
+    width: 80vw;
+  }
+
+  .navLod{
+    width: 10%;
+    left: 32%;
+  }
+
+  .navLod1{
+    width: 10%;
+    left: 48%;
+  }
+  .navLod2{
+    width: 13%;
+    left: 62%;
+  }
+  .navLod3{
+    width: 13%;
+    left: 80%;
+  }
+
+  .conlod{
+    width: 9rem;
+    height: 38px;
+  }
+
+  .conlod1{
+    width: 12rem;
+  }
+
+  .conlod2{
+    border-radius: 10px;
+    width: 8rem;
+  }
+  .conlod3{
+    border-radius: 10px;
+    width: 10rem;
+    height: 48px;
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 448px) and (max-width: 600px) {
+    .nave{
+        padding: 20px;
+    }
+    .nav li {
+            font-size: 3vw;
+            height: 23px;
+            justify-content: center;
+        }
+
+
+        .myWork {
+            padding: 1vh .04rem;
+            
+        }
+
+        .myWork1{
+            margin-left: 4vw;
+        }
+
+        .myWork2{
+            margin-left: 13vw;
+            font-size: 3vw;
+        }
+
+        .myWork3{
+            margin-left: 8vw;
+            font-size: 2.5vw;
+            font: bold;
+        }
+
+        .myWork4{
+            margin-top: .3rem;
+            gap: 5vw;
+            font-size: .8rem;
+            padding-left: .02rem;
+        }
+
+        .myWork5{
+            height: 5rem;
+            width: 8rem;
+        }
+
+        .myWork6{
+            width: 12rem;
+        }
+
+        .myWork7{
+            padding-top: -5rem;
+        }
+
+        .myWork8{
+            font-size: 1rem;
+        }
+
+        .about1{
+            margin-left: 0;
+        }
+    
+        .about2{
+            padding: 13px 5vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center; 
+            gap: 1rem;
+        }
+
+        .hr{
+            margin-left: 10%;
+            width: 80%;
+        }
+
+        .about3{
+            text-align: center;
+            width: 100%;
+        }
+        
+        .aboute2{
+            margin-top: 15px;
+            gap: .2rem;
+            line-height: 22px;
+        }
+
+        .aboute3{
+            gap: .2rem;
+            line-height: 22px;
+        }
+
+        .conText{
+            font-size: larger;
+        }
+
+        .con{
+            display: flex;
+            flex-direction: column;
+            margin-top: 3%;
+            min-height: auto;
+        }
+
+        .gText {
+    opacity: 1;
+    transform: scale(1) translateY(-50%);
+  }
+
+  .down{
+    background-color: rgb(81, 78, 78);
+  }
+
+  .wForm{
+    width: 80vw;
+  }
+
+  .navLod{
+    width: 10%;
+    left: 32%;
+  }
+
+  .navLod1{
+    width: 10%;
+    left: 48%;
+  }
+  .navLod2{
+    width: 13%;
+    left: 62%;
+  }
+  .navLod3{
+    width: 13%;
+    left: 80%;
+  }
+
+  .conlod{
+    width: 9rem;
+    height: 38px;
+  }
+
+  .conlod1{
+    width: 12rem;
+  }
+
+  .conlod2{
+    border-radius: 10px;
+    width: 8rem;
+  }
+  .conlod3{
+    border-radius: 10px;
+    width: 10rem;
+    height: 48px;
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+    .nav li{
+        font-size: 14px;
+    }
+
+    .landPhone{
+        height: 390px;
+    }
+
+    .myWork {
+            padding: 1vh .04rem;
+        }
+
+        .myWork1{
+            margin-left: 6vw;
+        }
+
+        .myWork2{
+            margin-left: 15vw;
+            font-size: .9rem;
+        }
+
+        .myWork3{
+            margin-left: 12vw;
+            font-size: .8rem;
+            font: bold;
+        }
+
+        .myWork4{
+            margin-top: .3rem;
+            gap: 4.5vw;
+            font-size: .8rem;
+            padding-left: .02rem;
+        }
+
+        .myWork5{
+            height: 5rem;
+            width: 8rem;
+        }
+
+        .myWork6{
+            width: 12rem;
+        }
+
+        .myWork7{
+            padding-top: -5rem;
+        }
+
+        .myWork8{
+            font-size: 1rem;
+        }
+
+        .mCon{
+            padding: 5rem .5rem;
+        }
+
+        .wForm{
+            width: 45vw;
+        }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav li{
+        font-size: 14px;
+    }
+
+    .landPhone{
+        height: 390px;
+    }
+
+    .myWork {
+            padding: 1vh .04rem;
+        }
+
+        .myWork1{
+            margin-left: 8vw;
+        }
+
+        .myWork2{
+            margin-left: 26vw;
+            font-size: .9rem;
+        }
+
+        .myWork3{
+            margin-left: 16vw;
+            font-size: .8rem;
+            font: bold;
+        }
+
+        .myWork4{
+            margin-top: .3rem;
+            gap: 8vw;
+            font-size: .8rem;
+            padding-left: .02rem;
+        }
+
+        .myWork5{
+            height: 6rem;
+            width: 11rem;
+        }
+
+        .myWork6{
+            width: 20rem;
+        }
+
+        .myWork7{
+            padding-top: -5rem;
+        }
+
+        .myWork8{
+            font-size: 1rem;
+        }
+
+        .wForm{
+            width: 42vw;
+        }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .nav li{
+        font-size: 16px;
+    }
+
+    .myWork {
+            padding: 1vh .04rem;
+        }
+
+        .myWork1{
+            margin-left: 10vw;
+        }
+
+        .myWork2{
+            margin-left: 26vw;
+            font-size: 1rem;
+        }
+
+        .myWork3{
+            margin-left: 18vw;
+            font-size: .9rem;
+            font: bold;
+        }
+
+        .myWork4{
+            margin-top: .3rem;
+            gap: 10vw;
+            font-size: .8rem;
+            padding-left: .02rem;
+        }
+
+        .myWork5{
+            height: 6.5rem;
+            width: 11.5rem;
+        }
+
+        .myWork6{
+            width: 20rem;
+        }
+
+        .myWork7{
+            padding-top: -5rem;
+        }
+
+        .myWork8{
+            font-size: 1rem;
+        }
+
+        .wForm{
+            width: 36vw;
+        }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .nav li{
+        font-size: 16px;
+    }
+
+    .myWork {
+            padding: 2vh .04rem;
+        }
+
+        .myWork1{
+            margin-left: 8vw;
+        }
+
+        .myWork2{
+            margin-left: 28.8vw;
+            font-size: 1rem;
+        }
+
+        .myWork3{
+            margin-left: 18vw;
+            font-size: .9rem;
+            font: bold;
+        }
+
+        .myWork4{
+            margin-top: .4rem;
+            gap: 16vw;
+            font-size: .9rem;
+            padding-left: .04rem;
+        }
+
+        .myWork5{
+            height: 7rem;
+            width: 12rem;
+        }
+
+        .myWork6{
+            width: 23rem;
+        }
+
+        .myWork7{
+            padding-top: -5rem;
+        }
+
+        .myWork8{
+            font-size: 1.5rem;
+        }
+
+        .wForm{
+            width: 33vw;
+        }
+
+}
