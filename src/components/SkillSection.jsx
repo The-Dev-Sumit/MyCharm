@@ -43,6 +43,8 @@ const SkillSection = ({ title, videoSrc, description, appSrc, imgSrc, dateOfMade
                       <video
                           src={videoSrc}
                           controls
+                          preload="metadata"
+                          crossOrigin="anonymous"
                           className="myWork5 w-[20vw] h-[25vh] object-cover rounded-lg "
                       />
                   )}
