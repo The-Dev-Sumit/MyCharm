@@ -78,7 +78,7 @@ const NameAnimation = () => {
   }, [scrollDirection, hasAnimated]);
 
   return (
-    <div className="flex justify-center items-center h-[100px] bg-transparent">
+    <div className="flex justify-center items-center h-[230px] bg-transparent">
       <svg
         width="16rem"
         height="230"

@@ -14,6 +14,35 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    
+    <script>
+      // Disable right-click
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      // Disable certain key combinations
+      document.addEventListener("keydown", (e) => {
+        // Prevent F12
+        if (e.key === "F12") {
+          e.preventDefault();
+        }
+        // Prevent Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.key === "I") {
+          e.preventDefault();
+        }
+        // Prevent Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && e.key === "C") {
+          e.preventDefault();
+        }
+        // Prevent Ctrl+Shift+J
+        if (e.ctrlKey && e.shiftKey && e.key === "J") {
+          e.preventDefault();
+        }
+        // Prevent Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === "U") {
+          e.preventDefault();
+        }
+      });
+    </script>
+
+
   </body>
 </html>

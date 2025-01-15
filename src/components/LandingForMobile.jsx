@@ -24,8 +24,8 @@ const LandingForMobile = () => {
             <p className="bg-gray-500 h-5 rounded-md animate-pulse w-[17rem] "></p>
       </div>
       ):(
-      <div className='landPhone w-full h-[240px] bg-zinc-900 flex flex-col border-none p-5 text-[#FEF9D9] gap-2 justify-center items-center select-none'>
-          <div className='h-[50px] z-20'>
+      <div className='landPhone w-full h-[340px] bg-zinc-900 flex flex-col border-none p-5 text-[#FEF9D9] gap-2 justify-center items-center select-none'>
+          <div className='h-[100px] z-20'>
                <NameAnimation/>
           </div>
 

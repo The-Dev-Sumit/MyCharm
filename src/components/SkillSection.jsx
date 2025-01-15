@@ -40,13 +40,17 @@ const SkillSection = ({ title, videoSrc, description, appSrc, imgSrc, dateOfMade
           </div>
           {isOpen && (
               <div className="myWork4 mt-4 bg-sky-200 items-center p-4 gap-[13vw] flex justify-center">
-                  {videoSrc && (
+                    {videoSrc && (
+                    <div className="myWork5 w-[20vw] h-[25vh] object-cover rounded-lg overflow-hidden">
                       <ReactPlayer
                           url={videoSrc}
                           controls
-                          className="myWork5 w-[20vw] h-[25vh] object-cover rounded-lg "
-                      />
+                          width="100%"
+                          height="100%"
+                        />
+                    </div>
                   )}
+                                      
 
                   <p className="myWork6 text-black text-center w-[500px]">{description}</p>
 

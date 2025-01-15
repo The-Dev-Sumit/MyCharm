@@ -431,6 +431,39 @@
             width: 45vw;
         }
 
+                .about1 {
+                    margin-left: 0;
+                }
+        
+                .about2 {
+                    padding: 13px 5vw;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 1rem;
+                }
+        
+                .hr {
+                    margin-left: 10%;
+                    width: 80%;
+                }
+        
+                .about3 {
+                    text-align: center;
+                    width: 100%;
+                }
+        
+                .aboute2 {
+                    margin-top: 15px;
+                    gap: .2rem;
+                    line-height: 22px;
+                }
+        
+                .aboute3 {
+                    gap: .2rem;
+                    line-height: 22px;
+                }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -488,6 +521,39 @@
         .wForm{
             width: 42vw;
         }
+
+                .about1 {
+                    margin-left: 0;
+                }
+        
+                .about2 {
+                    padding: 13px 5vw;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 1rem;
+                }
+        
+                .hr {
+                    margin-left: 10%;
+                    width: 80%;
+                }
+        
+                .about3 {
+                    text-align: center;
+                    width: 100%;
+                }
+        
+                .aboute2 {
+                    margin-top: 15px;
+                    gap: .2rem;
+                    line-height: 22px;
+                }
+        
+                .aboute3 {
+                    gap: .2rem;
+                    line-height: 22px;
+                }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -541,6 +607,8 @@
         .wForm{
             width: 36vw;
         }
+
+                
 
 }
 
