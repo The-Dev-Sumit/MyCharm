@@ -38,10 +38,10 @@ const Navbar = () => {
                   <a href="/" className='cursor-pointer' onClick={scrollToMyWorks}>My Work</a>
               </li>
               <li>
-                  <a href="/about me">About Me</a>
+                  <a href="/about-me">About Me</a>
               </li>
               <li>
-                  <a href="/contact me">Contact Me</a>
+                  <a href="/contact-me">Contact Me</a>
               </li>
           </ul>
           </div>
