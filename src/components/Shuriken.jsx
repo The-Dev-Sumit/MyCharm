@@ -94,7 +94,7 @@ const Shuriken = () => {
         ref={bladeRef}
         object={scene}
         position={[20, 0, 0]} // Start position: off-screen on the right
-        scale={[1.3, 1.3, 1.3]} // Adjust size of the blade
+        scale={[1, 1, 1]} // Adjust size of the blade
         rotation={[1.3, 0.3, 0]} // Initial rotation
           />
           
