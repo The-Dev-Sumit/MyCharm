@@ -1,6 +1,6 @@
 import React from 'react'
 import SkillSection from './SkillSection';
-import FirstProject from '/first-project-2023-10-12.mp4';
+import FirstProject from '../assets/videos/first-project-2023-10-12.mp4';
 import SecondProject from '../assets/videos/second-project-2024-01-28.mp4';
 import ThirdProject from '../assets/videos/snake-game.mp4';
 

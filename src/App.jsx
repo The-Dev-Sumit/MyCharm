@@ -37,8 +37,8 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="/about me" element={<AboutMe />} />
-          <Route path="/contact me" element={<ContactMe />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/contact-me" element={<ContactMe />} />
           <Route path="*" element={<NoPage/>} />
         </Routes>
     </div>
