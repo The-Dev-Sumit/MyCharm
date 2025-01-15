@@ -1,8 +1,8 @@
 import React from 'react'
 import SkillSection from './SkillSection';
-const FirstProject = "/videos/first-project-2023-10-12.mp4";
-const SecondProject = "/videos/second-project-2024-01-28.mp4";
-const ThirdProject = "/videos/snake-game.mp4";
+const FirstProject = "https://www.youtube.com/embed/epoW9eXuYbk?si=II_78piedc24QLZQ";
+const SecondProject = "https://www.youtube.com/embed/iwlj7uSlyOk?si=KvwoPD98MOSxS77m";
+const ThirdProject = "https://www.youtube.com/embed/E6YPc_Jb1qs?si=U3FVhXju0UAexXRg";
 
 // import FirstProject from '../assets/videos/first-project-2023-10-12.mp4';
 // import SecondProject from '../assets/videos/second-project-2024-01-28.mp4';

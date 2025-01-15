@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import ReactPlayer from "react-player";
 
 const SkillSection = ({ title, videoSrc, description, appSrc, imgSrc, dateOfMade }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,11 +41,9 @@ const SkillSection = ({ title, videoSrc, description, appSrc, imgSrc, dateOfMade
           {isOpen && (
               <div className="myWork4 mt-4 bg-sky-200 items-center p-4 gap-[13vw] flex justify-center">
                   {videoSrc && (
-                      <video
-                          src={videoSrc}
+                      <ReactPlayer
+                          url={videoSrc}
                           controls
-                          preload="metadata"
-                          crossOrigin="anonymous"
                           className="myWork5 w-[20vw] h-[25vh] object-cover rounded-lg "
                       />
                   )}
