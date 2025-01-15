@@ -11,4 +11,13 @@ export default defineConfig({
       $: "jquery",
     },
   },
+   build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom'], // Example for splitting dependencies
+        },
+      },
+    },
+  },
 })
