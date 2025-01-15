@@ -1,9 +1,12 @@
 import React from 'react'
 import SkillSection from './SkillSection';
 const FirstProject = "/videos/first-project-2023-10-12.mp4";
+const SecondProject = "/videos/second-project-2024-01-28.mp4";
+const ThirdProject = "/videos/snake-game.mp4";
+
 // import FirstProject from '../assets/videos/first-project-2023-10-12.mp4';
-import SecondProject from '../assets/videos/second-project-2024-01-28.mp4';
-import ThirdProject from '../assets/videos/snake-game.mp4';
+// import SecondProject from '../assets/videos/second-project-2024-01-28.mp4';
+// import ThirdProject from '../assets/videos/snake-game.mp4';
 
 
 const skillsData = [
