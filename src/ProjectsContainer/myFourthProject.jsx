@@ -91,10 +91,6 @@ const handleImageClick = () => {
             <h2 className="text-lg font-bold tracking-wider">
               My First Desktop App: CodeSnap
             </h2>
-            <h3
-                className="text-xl font-bold mt-3 ml-2 tracking-wide bg-green-600 text-white h-[7vh] w-[30vw] text-center py-2 rounded-md z-40">
-                    Download
-                    </h3>
               <div className="flex justify-center flex-col items-center w-[75vw] h-[34vh] object-cover rounded-lg overflow-hidden">
                     <div className="flex flex-row items-center gap-2 text-white font-semibold tracking-wide py-5">
                             <img src={CodeSnap} alt="CodeSnap Logo" className="w-8 h-8 rounded-md" /> 
@@ -162,7 +158,7 @@ const handleImageClick = () => {
               handleTextHover(false, e.currentTarget);
               handleMouseLeave(e);
             }}
-            className="text-xl myWork1 font-bold ml-[35vw] transform-gpu transition-transform duration-300 ease-out preserve-3d hover:shadow-xl ">
+            className="text-xl myWork1 font-bold ml-[34vw] transform-gpu transition-transform duration-300 ease-out preserve-3d hover:shadow-xl ">
                 My First Desktop App: CodeSnap
                             </h2>
           <p ref={(el) => (textRefs.current[1] = el)}
@@ -174,11 +170,6 @@ const handleImageClick = () => {
             onMouseLeave={(e) => handleTextHover(false, e.currentTarget)}
             className="mr-14 myWork2">Date: 13-02-2025</p>
             </div>
-              <h3
-                className="text-xl font-bold myWork3 tracking-wide bg-green-600 text-white h-[7vh] w-[9vw] text-center py-2 rounded-md"
-                  >
-                    Download
-                    </h3>
                 <div className="flex myWork4  justify-center items-center w-[50vw] h-[20vh] object-cover rounded-lg overflow-hidden">              
                   <div className="flex flex-row workEmg text-white gap-2">
                         <img src={CodeSnap} alt="CodeSnap Logo" className="w-10 h-10 workEmg1 rounded-md" /> 

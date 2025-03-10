@@ -125,6 +125,19 @@
             font-size: 2rem;
         }
 
+        .down2{
+            font-size: 1.7rem;
+        }
+
+        .down3{
+            font-size: 1rem;
+        }
+
+        .down4{
+        width: 100%;
+        margin-left: 0px;
+    }
+
         .hr{
             margin-left: 10%;
             width: 80%;
@@ -302,6 +315,24 @@
   .down{
     background-color: rgb(81, 78, 78);
   }
+
+  .down2{
+    font-size: 2.2rem;
+  }
+
+  .down3
+  {
+    font-size: 1.1rem;
+    }
+
+    .down4{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+    }
 
   .wForm{
     width: 80vw;

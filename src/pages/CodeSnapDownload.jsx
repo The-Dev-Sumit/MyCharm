@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
+import { faWindows } from "@fortawesome/free-brands-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import CursorParticles from "../components/CursorParticles";
 
@@ -34,25 +34,14 @@ const CodeSnapDownload = () => {
   const { textElements, registerTextElement, unregisterTextElement } =
     useTextElements();
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark"; // true or false
+    return localStorage.getItem("theme") === "dark";
   });
-  const [selectedOS, setSelectedOS] = useState("windows");
 
-  const handleDownloadW = () => {
+  const handleDownload = () => {
     const link = document.createElement("a");
     link.href =
       "https://github.com/The-Dev-Sumit/CodeSnapApp/releases/download/MyApp/CodeSnap.Setup.1.0.0.exe";
-    link.target = "_blank"; // Optional, open in new tab
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleDownloadL = () => {
-    const link = document.createElement("a");
-    link.href =
-      "https://github.com/The-Dev-Sumit/CodeSnapApp/releases/download/MyApp/codesnap_1.0.0_amd64.deb";
-    link.target = "_blank"; // Optional, open in new tab
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -77,16 +66,17 @@ const CodeSnapDownload = () => {
   };
 
   const windowsVersions = [
-    { version: "NA", date: "NA", size: "NA", changes: "Coming Soon" },
-  ];
-
-  const linuxVersions = [
-    { version: "NA", date: "NA", size: "NA", changes: "Coming Soon" },
+    {
+      version: "1.0.0",
+      date: "March 2025",
+      size: "200 MB",
+      changes: "Initial Release",
+    },
   ];
 
   return (
     <div
-      className={`w-full transition-colors duration-300  ${
+      className={`w-full transition-colors duration-300 ${
         isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"
       } min-h-screen relative p-5`}>
       {!isMobile && (
@@ -107,25 +97,27 @@ const CodeSnapDownload = () => {
           )}
         </button>
       </header>
-      <main className="pt-10">
+
+      <main className="pt-10 max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <h1
-            className={`text-[3rem] downSnap font-bold mb-6 ${
+            className={`text-[3rem] down2 font-bold mb-6 ${
               isDarkMode ? "text-white" : "text-gray-900"
             }`}>
             Download CodeSnap
           </h1>
           <p
-            className={`text-xl max-w-2xl mx-auto ${
+            className={`text-xl down3 ${
               isDarkMode ? "text-gray-300" : "text-gray-600"
             }`}>
             Practice Coding and Improve Your Skills with CodeSnap. Download Now
             and Start Coding!
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+
+        <div className="flex justify-center mb-16">
           <div
-            className={`p-8 rounded-lg transition-all duration-300 ${
+            className={`p-8 rounded-lg transition-all duration-300 w-full max-w-md ${
               isDarkMode
                 ? "bg-gray-800 hover:bg-gray-700"
                 : "bg-white hover:bg-gray-50 shadow-lg"
@@ -164,112 +156,31 @@ const CodeSnapDownload = () => {
               File size: 200 MB
             </p>
             <button
-              onClick={handleDownloadW}
-              className="!rounded-button cursor-pointer whitespace-nowrap w-full py-3 px-6 bg-blue-600 text-white font-semibold hover:bg-blue-900 transition-colors duration-300">
+              onClick={handleDownload}
+              className="rounded-lg cursor-pointer whitespace-nowrap w-full py-3 px-6 bg-blue-600 text-white font-semibold hover:bg-blue-900 transition-colors duration-300">
               Download for Windows
             </button>
           </div>
-          {/* Linux Card */}
-          <div
-            className={`p-8 rounded-lg transition-all duration-300 ${
-              isDarkMode
-                ? "bg-gray-800 hover:bg-gray-700"
-                : "bg-white hover:bg-gray-50 shadow-lg"
-            }`}>
-            <div className="flex items-center mb-4">
-              <FontAwesomeIcon icon={faLinux} size="2xl" />
-              <div className="ml-5">
-                <h3
-                  className={`text-xl font-semibold ${
-                    isDarkMode ? "text-white" : "text-gray-900"
-                  }`}>
-                  Linux
-                </h3>
-                <p
-                  className={`${
-                    isDarkMode ? "text-gray-400" : "text-gray-600"
-                  }`}>
-                  Version 1.0.0
-                </p>
-              </div>
-            </div>
-            <p
-              className={`mb-4 ${
-                isDarkMode ? "text-gray-300" : "text-gray-600"
-              }`}>
-              Compatible with Ubuntu 20.04+
-            </p>
-            <p
-              className={`mb-6 ${
-                isDarkMode ? "text-gray-400" : "text-gray-500"
-              }`}>
-              File size: 500 MB
-            </p>
-            <button
-              onClick={handleDownloadL}
-              className="!rounded-button cursor-pointer whitespace-nowrap w-full py-3 px-6 bg-blue-600 text-white font-semibold hover:bg-blue-900 transition-colors duration-300">
-              Download for Linux
-            </button>
-          </div>
         </div>
-      </main>
 
-      {/* OS Toggle */}
-      <div className="flex justify-center mb-8">
-        <div
-          className={`inline-flex gap-2 tracking-wide ${
-            isDarkMode ? "border-b-gray-300" : "border-b-gray-600"
-          }`}>
+        <div className="mb-16">
           <div
-            onClick={() => setSelectedOS("windows")}
-            className={`cursor-pointer whitespace-nowrap bg-transparent px-6 h-9 gap-2 flex items-center transition-colors duration-200 border-b-[2px]  ${
-              selectedOS === "windows"
-                ? isDarkMode
-                  ? "border-b-blue-500  text-white"
-                  : "border-b-gray-600 text-gray-900 shadow"
-                : isDarkMode
-                ? " text-gray-400"
-                : " text-gray-600"
+            className={`rounded-lg overflow-hidden ${
+              isDarkMode ? "bg-gray-800" : "bg-white shadow-lg"
             }`}>
-            <FontAwesomeIcon icon={faWindows} style={{ color: "#9470ff" }} />
-            <p>Windows</p>
-          </div>
-          <div
-            onClick={() => setSelectedOS("linux")}
-            className={`cursor-pointer whitespace-nowrap bg-transparent px-6 h-9 gap-2 flex items-center transition-colors duration-200 border-b-[2px]  ${
-              selectedOS === "linux"
-                ? isDarkMode
-                  ? "border-b-blue-500 text-white"
-                  : "border-b-gray-600 text-gray-900 shadow"
-                : isDarkMode
-                ? "text-gray-400"
-                : "text-gray-600"
-            }`}>
-            <FontAwesomeIcon icon={faLinux} />
-            <p>Linux</p>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-4xl mx-auto mb-16">
-        <div
-          className={`rounded-lg overflow-hidden ${
-            isDarkMode ? "bg-gray-800" : "bg-white shadow-lg"
-          }`}>
-          <div
-            className={`px-6 py-4 ${
-              isDarkMode ? "bg-gray-700" : "bg-gray-50"
-            }`}>
-            <h3
-              className={`text-lg font-semibold ${
-                isDarkMode ? "text-white" : "text-gray-900"
+            <div
+              className={`px-6 py-4 ${
+                isDarkMode ? "bg-gray-700" : "bg-gray-50"
               }`}>
-              Available Versions for{" "}
-              {selectedOS === "windows" ? "Windows" : "Linux"}
-            </h3>
-          </div>
-          <div className="divide-y divide-gray-200">
-            {(selectedOS === "windows" ? windowsVersions : linuxVersions).map(
-              (version) => (
+              <h3
+                className={`text-lg font-semibold ${
+                  isDarkMode ? "text-white" : "text-gray-900"
+                }`}>
+                Available Versions for Windows
+              </h3>
+            </div>
+            <div className="divide-y divide-gray-200">
+              {windowsVersions.map((version) => (
                 <div key={version.version} className="px-6 py-4">
                   <div className="flex items-center justify-between">
                     <div>
@@ -292,32 +203,35 @@ const CodeSnapDownload = () => {
                         {version.changes}
                       </p>
                     </div>
-                    <button className="!rounded-button cursor-pointer whitespace-nowrap px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200">
-                      Coming Soon.....
+                    <button
+                      onClick={handleDownload}
+                      className="rounded-lg cursor-pointer whitespace-nowrap px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200">
+                      Download
                     </button>
                   </div>
                 </div>
-              )
-            )}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className={`max-w-4xl mx-auto mr-16 ${
-          isDarkMode ? "text-gray-300" : "text-gray-700"
-        }`}>
-        <h2
-          className={`text-2xl font-bold ml-16 mb-6 ${
-            isDarkMode ? "text-white" : "text-gray-900"
+
+        <div
+          className={`flex flex-col justify-center items-center w-full ${
+            isDarkMode ? "text-gray-300" : "text-gray-700"
           }`}>
-          What's New in 1.0.0
-        </h2>
-        <ul className="space-y-3">
-          <li>• You can creates file and Folders</li>
-          <li>• You can run 4 languages to practice your coding skills</li>
-          <li>• Improve your coding skills with codesnap</li>
-        </ul>
-      </div>
+          <h2
+            className={`text-2xl font-bold mb-6 ${
+              isDarkMode ? "text-white" : "text-gray-900"
+            }`}>
+            What&apos;s New in 1.0.0
+          </h2>
+          <ul className="space-y-3 ml-32 down4">
+            <li>• You can create files and folders</li>
+            <li>• You can run 4 languages to practice your coding skills</li>
+            <li>• Improve your coding skills with CodeSnap</li>
+          </ul>
+        </div>
+      </main>
     </div>
   );
 };

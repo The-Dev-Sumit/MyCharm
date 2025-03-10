@@ -5,7 +5,6 @@ import {
   faSun,
   faCode,
   faServer,
-  faTools,
   faLightbulb,
   faCubes,
   faCompassDrafting,
@@ -39,7 +38,6 @@ styleSheet.type = "text/css";
 styleSheet.innerText = swiperStyles;
 document.head.appendChild(styleSheet);
 
-
 const useTextElements = () => {
   const textElements = useRef([]);
 
@@ -57,7 +55,12 @@ const useTextElements = () => {
     textElements.current = [];
   };
 
-  return { textElements, registerTextElement, unregisterTextElement, clearTextElements };
+  return {
+    textElements,
+    registerTextElement,
+    unregisterTextElement,
+    clearTextElements,
+  };
 };
 
 const AboutMe = () => {
@@ -65,9 +68,9 @@ const AboutMe = () => {
   const [activeSection, setActiveSection] = useState("intro");
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); 
+  const [isMobile, setIsMobile] = useState(false);
   const cardRef = useRef(null);
-    const textRefs = useRef([]);
+  const textRefs = useRef([]);
   const { textElements, registerTextElement, unregisterTextElement } =
     useTextElements();
 
@@ -77,7 +80,7 @@ const AboutMe = () => {
     }, 2000);
 
     return () => clearTimeout(load);
-  }, []); 
+  }, []);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -106,7 +109,7 @@ const AboutMe = () => {
 
   useEffect(() => {
     const chartDom = document.getElementById("skillsChart");
-    if (!chartDom) return; 
+    if (!chartDom) return;
 
     const skillsChart = echarts.init(chartDom);
     const option = {
@@ -139,63 +142,63 @@ const AboutMe = () => {
     return () => {
       skillsChart.dispose();
     };
-  }, [isLoading]); 
+  }, [isLoading]);
 
   useEffect(() => {
-      const mediaQuery = window.matchMedia("(max-width: 639px)");
-      setIsMobile(mediaQuery.matches);
-  
-      const handleResize = () => setIsMobile(mediaQuery.matches);
-      mediaQuery.addEventListener("change", handleResize);
-  
-      return () => mediaQuery.removeEventListener("change", handleResize);
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleResize = () => setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
-  
+
   const registerText = (element) => registerTextElement(element);
   const unregisterText = (element) => unregisterTextElement(element);
-  
-    const handleMouseMove = (e) => {
+
+  const handleMouseMove = (e) => {
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left; // Mouse X relative to card
     const centerX = rect.width / 2;
-  
+
     // Calculate rotation based only on horizontal (left/right) mouse position
-    const rotateY = (centerX - x) / centerX * 20; // Max 20deg tilt left/right
-  
+    const rotateY = ((centerX - x) / centerX) * 20; // Max 20deg tilt left/right
+
     // Apply the transform (only Y-axis rotation)
     card.style.transform = `rotateY(${rotateY}deg)`;
   };
-  
-    const handleMouseLeave = () => {
-      const card = cardRef.current;
-      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    };
-  
-    useEffect(() => {
-      const textNodes = textRefs.current.filter((ref) => ref);
+
+  const handleMouseLeave = () => {
+    const card = cardRef.current;
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
+  };
+
+  useEffect(() => {
+    const textNodes = textRefs.current.filter((ref) => ref);
+    textNodes.forEach((ref) => {
+      if (ref) registerText(ref);
+    });
+
+    return () => {
       textNodes.forEach((ref) => {
-        if (ref) registerText(ref);
+        if (ref) unregisterText(ref);
       });
-  
-      return () => {
-        textNodes.forEach((ref) => {
-          if (ref) unregisterText(ref);
-        });
-      };
-    }, [registerText, unregisterText]);
-  
-    const handleTextHover = (isHovering, textElement) => {
-      if (isHovering) {
-        textElement.style.color = "#690B22"; 
-        textElement.style.zIndex = "99"; 
-        textElement.style.fontWeight = "bold";
-      } else {
-        textElement.style.color = ""; // Reset to original color
-        textElement.style.zIndex = ""; // Revert to default z-index
-        textElement.style.fontWeight = "";
-      }
     };
+  }, [registerText, unregisterText]);
+
+  const handleTextHover = (isHovering, textElement) => {
+    if (isHovering) {
+      textElement.style.color = "#690B22";
+      textElement.style.zIndex = "99";
+      textElement.style.fontWeight = "bold";
+    } else {
+      textElement.style.color = ""; // Reset to original color
+      textElement.style.zIndex = ""; // Revert to default z-index
+      textElement.style.fontWeight = "";
+    }
+  };
 
   return (
     <>
