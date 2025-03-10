@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.third{
+    z-index: 90;
+}
+.third1{
+    z-index: 100;
+}
+
+.third11{
+    z-index: 50;
+}
+
+.lanHigh {
+    position: relative;
+    /* Required for z-index to work */
+    transition: z-index 0.3s ease-in-out;
+}
+
+.lanHigh:hover {
+    z-index: 999;
+}
+
+.cursor-circle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 122, 255, 0.6);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
+    /* Default */
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -18,6 +52,10 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.scroll-skill::-webkit-scrollbar {
+    display: none;
 }
 
 .ripple {
@@ -70,70 +108,21 @@
 }
 
 @media (max-width: 447px) {
-    .nave{
-        padding: 20px;
-    }
-    .nav li {
-            font-size: 3vw;
-            height: 23px;
-            justify-content: center;
+
+    .about1{
+            margin-left: 8.5rem;
         }
 
-
-        .myWork {
-            padding: 1vh .04rem;
-            
-        }
-
-        .myWork1{
-            margin-left: 2vw;
-        }
-
-        .myWork2{
-            margin-left: 6vw;
-            font-size: 3vw;
-        }
-
-        .myWork3{
-            margin-left: 7vw;
-            font-size: 2.5vw;
-            font: bold;
-        }
-
-        .myWork4{
-            margin-top: .3rem;
-            gap: 5vw;
-            font-size: .8rem;
-            padding-left: .02rem;
-        }
-
-        .myWork5{
-            height: 5rem;
-            width: 8rem;
-        }
-
-        .myWork6{
-            width: 12rem;
-        }
-
-        .myWork7{
-            padding-top: -5rem;
-        }
-
-        .myWork8{
-            font-size: 1rem;
-        }
-
-        .about1{
-            margin-left: 0;
-        }
-    
         .about2{
             padding: 13px 5vw;
             display: flex;
             flex-direction: column;
             text-align: center; 
             gap: 1rem;
+        }
+
+        .downSnap{
+            font-size: 2rem;
         }
 
         .hr{
@@ -181,23 +170,6 @@
     width: 80vw;
   }
 
-  .navLod{
-    width: 10%;
-    left: 32%;
-  }
-
-  .navLod1{
-    width: 10%;
-    left: 48%;
-  }
-  .navLod2{
-    width: 13%;
-    left: 62%;
-  }
-  .navLod3{
-    width: 13%;
-    left: 80%;
-  }
 
   .conlod{
     width: 9rem;
@@ -230,6 +202,9 @@
             justify-content: center;
         }
 
+       .downSnap {
+         font-size: 2.3rem;
+         }
 
         .myWork {
             padding: 1vh .04rem;
@@ -276,7 +251,7 @@
         }
 
         .about1{
-            margin-left: 0;
+            margin-left: 37vw;
         }
     
         .about2{
@@ -381,38 +356,86 @@
     }
 
     .myWork {
-            padding: 1vh .04rem;
+            padding: 0 .04rem;
         }
 
         .myWork1{
-            margin-left: 6vw;
+            margin-left: 14vw;
+            width: 50vw;
+        }
+
+        .myWork11{
+            margin-left: 18vw;
+            width: 50vw;
         }
 
         .myWork2{
-            margin-left: 15vw;
+            width: 18vw;
             font-size: .9rem;
+            margin-right: -7vw;
+        }
+
+        .myWork22{
+            width: 18vw;
+            font-size: .9rem;
+            margin-right: -7vw;
         }
 
         .myWork3{
-            margin-left: 12vw;
-            font-size: .8rem;
-            font: bold;
+            margin: 0px;
+            height: 3rem;
+            width: 19vw;
+        }
+
+        .myWork33{
+            margin: 0px;
+            height: 13rem;
+            width: 63vw;
         }
 
         .myWork4{
-            margin-top: .3rem;
-            gap: 4.5vw;
-            font-size: .8rem;
-            padding-left: .02rem;
+            width: 40vw;
+            font-size: .8rem;  
+        }
+
+        .myWork44{
+            width: 60vw;
+            font-size: 1rem;  
+        }
+
+        .workEmg{
+            padding: .5rem .2rem;
+            width: 100%;
+        }
+        .workEmg1{
+            width: 10%;
+            height: 10%;
         }
 
         .myWork5{
-            height: 5rem;
-            width: 8rem;
+            height: 15rem;
+            width: 28rem;
+            z-index: 30;
         }
 
         .myWork6{
-            width: 12rem;
+            width: 65vh;
+            z-index: 99;
+        }
+
+        .Screen{
+            position: absolute;
+            top: 153rem;
+            left: -2rem;
+        }
+
+        .screen11{
+            width: 100%;
+        }
+
+        .screen1{
+            position: absolute;
+            left: 44rem;
         }
 
         .myWork7{
@@ -431,9 +454,9 @@
             width: 45vw;
         }
 
-                .about1 {
-                    margin-left: 0;
-                }
+                .about1{
+               margin-left: 37vw;
+                 }
         
                 .about2 {
                     padding: 13px 5vw;
@@ -464,6 +487,8 @@
                     line-height: 22px;
                 }
 
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -479,35 +504,98 @@
             padding: 1vh .04rem;
         }
 
-        .myWork1{
-            margin-left: 8vw;
-        }
+        .myWork1 {
+            margin-left: 20vw;
+            width: 50vw;
+            }
 
-        .myWork2{
-            margin-left: 26vw;
+        .myWork11 {
+            margin-left: 22vw;
+            width: 50vw;
+        }
+    
+        .myWork2 {
+            width: 18vw;
             font-size: .9rem;
+            margin-right: -7vw;
         }
-
-        .myWork3{
-            margin-left: 16vw;
+    
+        .myWork22 {
+            width: 18vw;
+            font-size: .9rem;
+            margin-right: -7vw;
+        }
+    
+        .myWork3 {
+            margin: 0px;
+            height: 3rem;
+            width: 19vw;
+        }
+    
+        .myWork33 {
+            margin: 0px;
+            height: 14rem;
+            width: 58vw;
+        }
+    
+        .myWork4 {
+            width: 40vw;
             font-size: .8rem;
-            font: bold;
+        }
+    
+        .myWork44 {
+            width: 60vw;
+            font-size: 1rem;
+        }
+    
+        .workEmg {
+            padding: .5rem .2rem;
+            width: 80%;
+        }
+    
+        .workEmg1 {
+            width: 10%;
+            height: 10%;
+        }
+    
+        .myWork5 {
+            height: 15rem;
+            width: 30rem;
+            z-index: 30;
         }
 
-        .myWork4{
-            margin-top: .3rem;
-            gap: 8vw;
-            font-size: .8rem;
-            padding-left: .02rem;
-        }
-
-        .myWork5{
-            height: 6rem;
-            width: 11rem;
-        }
+                .Screen {
+                    position: absolute;
+                    top: 153rem;
+                    left: -2rem;
+                }
+        
+                .screen11 {
+                    width: 100%;
+                }
+        
+                .screen1 {
+                    position: absolute;
+                    left: 57.5rem;
+                }
 
         .myWork6{
-            width: 20rem;
+            width: 30rem;
+        }
+
+        .zoomIn{
+            position: absolute;
+            top: 1rem;
+            left: 43rem;
+        }
+
+        .zoomIn1{
+            font-size: .8rem;
+        }
+
+        .zoomIn2{
+            font-size: .8rem;
+            margin-left: .4rem;
         }
 
         .myWork7{
@@ -522,9 +610,9 @@
             width: 42vw;
         }
 
-                .about1 {
-                    margin-left: 0;
-                }
+            .about1{
+            margin-left: 41vw;
+        }
         
                 .about2 {
                     padding: 13px 5vw;
@@ -561,40 +649,113 @@
         font-size: 16px;
     }
 
+       .about1{
+            margin-left: 42vw;
+            font-size: 2rem;
+        }
+
     .myWork {
             padding: 1vh .04rem;
         }
 
-        .myWork1{
-            margin-left: 10vw;
-        }
+                .myWork1 {
+                    margin-left: 27vw;
+                    width: 50vw;
+                }
+        
+                .myWork11 {
+                    margin-left: 30vw;
+                    width: 50vw;
+                }
+        
+                .myWork2 {
+                    width: 18vw;
+                    font-size: .9rem;
+                    margin-right: -5vw;
+                }
+        
+                .myWork22 {
+                    width: 18vw;
+                    font-size: .9rem;
+                    margin-right: -5vw;
+                }
+        
+                .myWork3 {
+                    margin: 0px;
+                    height: 3rem;
+                    width: 19vw;
+                }
+        
+                .myWork33 {
+                    margin: 0px;
+                    height: 15rem;
+                    width: 53vw;
+                }
+        
+                .myWork4 {
+                    width: 40vw;
+                    font-size: .8rem;
+                }
+        
+                .myWork44 {
+                    width: 60vw;
+                    font-size: 1rem;
+                }
+        
+                .workEmg {
+                    padding: .5rem .2rem;
+                    width: 90%;
+                    margin-left: 5rem;
+                }
+        
+                .workEmg1 {
+                    width: 10%;
+                    height: 10%;
+                }
 
-        .myWork2{
-            margin-left: 26vw;
-            font-size: 1rem;
-        }
+                .workEmg2 {
+                    font-size: 1.2rem;
+                }
+        
+                .myWork5 {
+                    height: 15rem;
+                    width: 30rem;
+                    z-index: 30;
+                }
+        
+                .myWork6 {
+                    width: 30rem;
+                }
 
-        .myWork3{
-            margin-left: 18vw;
-            font-size: .9rem;
-            font: bold;
-        }
+                                .Screen {
+                                    position: absolute;
+                                    top: 153rem;
+                                    left: .3rem;
+                                }
+                
+                                .screen11 {
+                                    width: 100%;
+                                }
+                
+                                .screen1 {
+                                    position: absolute;
+                                    left: 62rem;
+                                }
 
-        .myWork4{
-            margin-top: .3rem;
-            gap: 10vw;
-            font-size: .8rem;
-            padding-left: .02rem;
-        }
-
-        .myWork5{
-            height: 6.5rem;
-            width: 11.5rem;
-        }
-
-        .myWork6{
-            width: 20rem;
-        }
+                .zoomIn {
+                    position: absolute;
+                    top: 1rem;
+                    left: 46rem;
+                }
+                
+                .zoomIn1 {
+                    font-size: .8rem;
+                }
+                
+                .zoomIn2 {
+                    font-size: .8rem;
+                    margin-left: .4rem;
+                    }
 
         .myWork7{
             padding-top: -5rem;
@@ -612,45 +773,119 @@
 
 }
 
+
 @media (min-width: 1200px) and (max-width: 1399px) {
     .nav li{
         font-size: 16px;
     }
 
+       .about1{
+            margin-left: 45vw;
+            font-size: 1.7rem;
+        }
+
     .myWork {
             padding: 2vh .04rem;
         }
 
-        .myWork1{
-            margin-left: 8vw;
-        }
-
-        .myWork2{
-            margin-left: 28.8vw;
-            font-size: 1rem;
-        }
-
-        .myWork3{
-            margin-left: 18vw;
+    .myWork1 {
+                margin-left: 30vw;
+                width: 50vw;
+         }
+                
+    .myWork11 {
+             margin-left: 33vw;
+             width: 50vw;
+    }
+                
+    .myWork2 {
+             width: 18vw;
+                font-size: .9rem;
+                margin-right: -5vw;
+            }
+                
+    .myWork22 {
+            width: 18vw;
             font-size: .9rem;
-            font: bold;
+            margin-right: -3vw;
         }
+                
+        .myWork3 {
+         margin: 0px;
+         height: 3rem;
+         width: 15vw;
+        }
+                
+        .myWork33 {
+             margin: 0px;
+             height: 15rem;
+             width: 47vw;
+         }
+                
+            .myWork4 {
+             width: 40vw;
+             font-size: .8rem;
+            }
+                
+            .myWork44 {
+             width: 50vw;
+             font-size: 1rem;
+         }
+                
+         .workEmg {
+             padding: .5rem .2rem;
+             width: 90%;
+             margin-left: 7rem;
+         }
+                
+         .workEmg1 {
+             width: 10%;
+             height: 10%;
+         }
+                
+            .workEmg2 {
+                font-size: 1.2rem;
+         }
+                
+         .myWork5 {
+             height: 15rem;
+             width: 30rem;
+             z-index: 30;
+         }
+                
+         .myWork6 {
+             width: 30rem;
+         }
 
-        .myWork4{
-            margin-top: .4rem;
-            gap: 16vw;
-            font-size: .9rem;
-            padding-left: .04rem;
-        }
-
-        .myWork5{
-            height: 7rem;
-            width: 12rem;
-        }
-
-        .myWork6{
-            width: 23rem;
-        }
+         .Screen {
+             position: absolute;
+             top: 153rem;
+             left: .3rem;
+            }
+                
+         .screen11 {
+             width: 100%;
+         }
+                
+         .screen1 {
+             position: absolute;
+             left: 74rem;
+         }
+                
+         .zoomIn {
+              position: absolute;
+             top: 1rem;
+             left: 58rem;
+         }
+                
+         .zoomIn1 {
+             font-size: .8rem;
+         }
+                
+         .zoomIn2 {
+             font-size: .8rem;
+             margin-left: .4rem;
+         }
 
         .myWork7{
             padding-top: -5rem;

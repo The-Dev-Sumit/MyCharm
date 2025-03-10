@@ -7,6 +7,8 @@ const RippleEffect = () => {
  const rippleRef = useRef(null);
 
   useEffect(() => {
+    if (!rippleRef.current) return;
+
     // Initialize ripple effect
     const initializeRipples = () => {
       $(rippleRef.current).ripples({
@@ -27,7 +29,7 @@ const RippleEffect = () => {
     };
   }, []);
 
-    return <div ref={rippleRef} className="w-full h-[29rem]  bg-black   overflow-hidden">
+    return <div ref={rippleRef} className="w-full h-[29rem]  bg-black">
         <img src={UnderWater} className="w-full h-[29rem] opacity-15 select-none" />
   </div>
 };

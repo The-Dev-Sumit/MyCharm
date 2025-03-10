@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import AboutMe from './pages/AboutMe'
 import ContactMe from './pages/ContactMe'
 import NoPage from './pages/NoPage'
+import CodeSnapDownload from './pages/CodeSnapDownload';
 
 const App = () => {
 
@@ -33,15 +34,14 @@ const App = () => {
 
 
   return (
-    <div className='bg-white w-full h-screen'>
-      <div>
+    <div className='bg-black w-full h-screen'>
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/contact-me" element={<ContactMe />} />
+          <Route path="/gfdashjdyebsghaewe34g4y5reewrr" element={<CodeSnapDownload />} />
           <Route path="*" element={<NoPage/>} />
         </Routes>
-    </div>
     </div>
   )
 }

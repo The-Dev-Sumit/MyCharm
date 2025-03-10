@@ -9,7 +9,7 @@ const ArrowAnimation = () => {
   const divRef = useRef(); // Reference for the animated div
 
   useEffect(() => {
-
+    if (!divRef.current) return;
     // Div animation: Independent horizontal animation
     gsap.timeline({
       scrollTrigger: {

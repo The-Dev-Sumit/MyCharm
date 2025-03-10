@@ -1,13 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import Navbar from '../components/Navbar'
 import Github from '../assets/images/github.png'
 import Linkedin from '../assets/images/linkedin.png'
+import CursorParticles from '../components/CursorParticles';
+
+const useTextElements = () => {
+  const textElements = useRef([]);
+
+  const registerTextElement = (element) => {
+    if (element && !textElements.current.includes(element)) {
+      textElements.current.push(element);
+    }
+  };
+
+  const unregisterTextElement = (element) => {
+    textElements.current = textElements.current.filter((el) => el !== element);
+  };
+
+  const clearTextElements = () => {
+    textElements.current = [];
+  };
+
+  return { textElements, registerTextElement, unregisterTextElement, clearTextElements };
+};
+
 
 const ContactMe = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const { textElements, registerTextElement, unregisterTextElement } =
+    useTextElements();
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -51,9 +74,6 @@ setTimeout(() => {
 
 return (
   <div>
-    <div>
-      <Navbar />
-    </div>
     {
       isLoading ? (
           <div className='flex flex-col  bg-gray-800 w-full min-h-screen items-center py-20 px-5 animate-pulse'>
@@ -78,6 +98,7 @@ return (
 </div>
       ): (
           <div className='flex flex-col mCon bg-gray-800 w-full min-h-screen items-center py-20 px-5 sm:px-2'>
+            <CursorParticles textElements={textElements} screenWidth={window.innerWidth} />
       <h1 className='capitalize conText text-4xl text-slate-200 font-bold '>get in touch</h1>
       <div className='flex flex-row  con justify-center items-center mt-28'>
         <div className='flex flex-col p-4 space-y-5'>

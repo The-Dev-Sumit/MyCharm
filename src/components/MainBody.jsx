@@ -30,7 +30,7 @@ const MainBody = () => {
       <div className='w-full h-[300px] animate-pulse bg-gray-500'></div>
     ) : (
           <div className='w-full h-[300px] overflow-hidden'>
-            {isMobile ? <MainBodyAnimation/> : <BladeAnimation/>}
+              {isMobile ? <MainBodyAnimation /> : <BladeAnimation />}
     </div>
     )}
      </> 

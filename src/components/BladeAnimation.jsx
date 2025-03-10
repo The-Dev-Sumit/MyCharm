@@ -9,9 +9,9 @@ const BladeAnimation = () => {
   return (
      <div
       id="blade-container"
-      className="w-full h-[300px] overflow-x-hidden relative z-40"
+      className="w-full h-[300px] overflow-x-hidden relative z-30"
     >
-      <img src={BambooBg} className="w-full absolute h-[300px] opacity-100 select-none z-30" />
+      <img src={BambooBg} className="w-full absolute h-[300px] opacity-100 select-none z-20" />
       <img src={NinjaBg} className="w-full absolute h-[300px] opacity-90 select-none" />
       <Canvas>
         <ambientLight intensity={0.5} />
