@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import * as echarts from "echarts";
 import CursorParticles from "../components/CursorParticles";
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/Logo.png";
 
 const swiperStyles = `
 .skill-swiper {
