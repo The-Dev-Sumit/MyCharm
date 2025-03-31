@@ -1,14 +1,27 @@
 declare module "../components/CursorParticles" {
-  const component: React.FC;
-  export default component;
+  import { FC } from "react";
+  const Component: FC<{
+    screenWidth: number;
+    hasError: boolean;
+  }>;
+  export default Component;
 }
 
 declare module "../components/ButtonWrapper" {
-  const component: React.FC;
-  export default component;
+  import { FC } from "react";
+  const Component: FC<{
+    href?: string;
+    text?: string;
+    onClick?: () => void;
+  }>;
+  export default Component;
 }
 
 declare module "../components/SparkleButton" {
-  const component: React.FC;
-  export default component;
+  import { FC } from "react";
+  const Component: FC<{
+    text?: string;
+    onClick?: () => void;
+  }>;
+  export default Component;
 }
