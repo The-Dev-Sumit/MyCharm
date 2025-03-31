@@ -22,6 +22,7 @@ const Works: React.FC<WorksProps> = ({ items }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
+  // Check if it's mobile on mount and resize
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);
@@ -32,38 +33,56 @@ const Works: React.FC<WorksProps> = ({ items }) => {
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
+  // Debounce function to limit how often scroll handler runs
+  const debounce = (func: (...args: any[]) => void, delay: number) => {
+    let timeoutId: NodeJS.Timeout;
+    return (...args: any[]) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  // Scroll snap handler for mobile
   useEffect(() => {
     if (isMobile && scrollRef.current) {
       const scrollContainer = scrollRef.current;
 
       const handleScroll = () => {
-        const children = Array.from(scrollContainer.children);
         const scrollLeft = scrollContainer.scrollLeft;
         const containerWidth = scrollContainer.clientWidth;
+        const children = Array.from(scrollContainer.children) as HTMLElement[];
 
-        let closest = children[0] as HTMLElement;
-        let minDistance = Math.abs(closest.offsetLeft - scrollLeft);
+        // Find the closest item to center
+        let closestIndex = 0;
+        let minDistance = Infinity;
 
-        children.forEach((child) => {
-          const childElement = child as HTMLElement;
-          const distance = Math.abs(childElement.offsetLeft - scrollLeft);
+        children.forEach((child, index) => {
+          const childLeft = child.offsetLeft;
+          const distance = Math.abs(
+            childLeft - scrollLeft - containerWidth / 2 + child.offsetWidth / 2
+          );
           if (distance < minDistance) {
             minDistance = distance;
-            closest = childElement;
+            closestIndex = index;
           }
         });
 
+        // Snap to the closest item
+        const targetChild = children[closestIndex];
         scrollContainer.scrollTo({
-          left: closest.offsetLeft - (containerWidth - closest.offsetWidth) / 2,
+          left:
+            targetChild.offsetLeft -
+            (containerWidth - targetChild.offsetWidth) / 2,
           behavior: "smooth",
         });
       };
 
-      scrollContainer.addEventListener("scroll", handleScroll);
+      // Debounced scroll handler
+      const debouncedScroll = debounce(handleScroll, 100); // 100ms debounce
+      scrollContainer.addEventListener("scroll", debouncedScroll);
 
-      return () => {
-        scrollContainer.removeEventListener("scroll", handleScroll);
-      };
+      return () =>
+        scrollContainer.removeEventListener("scroll", debouncedScroll);
     }
   }, [isMobile]);
 
@@ -79,13 +98,13 @@ const Works: React.FC<WorksProps> = ({ items }) => {
           ref={scrollRef}
           className={`${
             isMobile
-              ? "flex overflow-x-auto transition-all duration-200 snap-x snap-mandatory scrollbar-hide [&::-webkit-scrollbar]:hidden"
+              ? "flex overflow-x-auto snap-x snap-mandatory scrollbar-hide [&::-webkit-scrollbar]:hidden space-x-4"
               : "grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           } px-4 py-2`}>
           {items.map((item, index) => (
             <div
               key={index}
-              className={`flex-none w-[90vw] md:w-full border-2 border-gray-500/60 p-2 md:hover:scale-105 h-[60vh] md:h-[65vh] cursor-pointer transition-all duration-300 rounded-lg overflow-hidden gap-1 relative flex flex-col snap-center`}>
+              className={`flex-none w-[90vw] md:w-full border-2 border-gray-500/60 p-2 md:hover:scale-105 h-[60vh] md:h-[65vh] cursor-pointer transition-all duration-300 rounded-lg overflow-hidden flex flex-col snap-center`}>
               {item.date && (
                 <p className="text-white/90 text-sm w-full tracking-wide mb-2 flex justify-end font-aref pr-2">
                   {item.date}
