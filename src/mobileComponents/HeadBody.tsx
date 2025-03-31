@@ -1,17 +1,14 @@
 import BlurText from "../components/BlurText";
 import { useEffect, useState } from "react";
-import Background from "../components/Background";
 
 
 const HeadBody = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
-      setIsScrolling(true);
     };
 
     window.addEventListener("scroll", handleScroll);

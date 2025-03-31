@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "jsx": "preserve",
+    "checkJs": true,
+    "jsx": "react-jsx",
     "target": "es6",
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
@@ -15,7 +17,7 @@
     },
     "isolatedModules": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/types.d.ts"],
   "exclude": ["node_modules"],
   "references": [
     { "path": "./tsconfig.app.json" },
