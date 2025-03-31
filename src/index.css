@@ -1,42 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Aref+Ruqaa+Ink:wght@400;700&family=Bungee+Spice&family=DM+Serif+Text:ital@0;1&family=Days+One&family=Ga+Maamli&family=Koulen&family=Lemon&family=Metal+Mania&family=Righteous&family=Rowdies:wght@300;400;700&family=Yatra+One&display=swap");
+
+@import "tailwindcss";
+@import "tailwindcss/utilities";
 
 
-.third{
-    z-index: 90;
-}
-.third1{
-    z-index: 100;
-}
-
-.third11{
-    z-index: 50;
-}
-
-.lanHigh {
-    position: relative;
-    /* Required for z-index to work */
-    transition: z-index 0.3s ease-in-out;
-}
-
-.lanHigh:hover {
-    z-index: 999;
-}
-
-.cursor-circle {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: rgba(0, 122, 255, 0.6);
-    pointer-events: none;
-    transition: all 0.2s ease-in-out;
-    z-index: -1;
-    /* Default */
-}
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -50,884 +17,362 @@
     border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
 
-.scroll-skill::-webkit-scrollbar {
-    display: none;
-}
-
-.ripple {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: scale(0);
-    animation: ripple-animation 1s ease-out forwards;
-}
-
-@keyframes ripple-animation {
-    to {
-        transform: scale(10);
-        opacity: 0;
-    }
-}
-
-.star {
-    width: 6px;
-    /* Set width for the star */
-    height: 6px;
-    /* Set height for the star */
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    background-color: azure;
-    /* Set a color for the star */
-    box-shadow: 0px 0px 10px 2px azure;
-    /* Create a glowing effect */
-    position: absolute;
-    /* Ensure positioning works for stars */
-    animation: twinkle 2s infinite ease-in-out;
-    /* Optional twinkle animation */
-}
-
-
-@keyframes twinkle {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(1.2);
-    }
-}
-
-@media (max-width: 447px) {
-
-    .about1{
-            margin-left: 8.5rem;
-        }
-
-        .about2{
-            padding: 13px 5vw;
-            display: flex;
-            flex-direction: column;
-            text-align: center; 
-            gap: 1rem;
-        }
-
-        .downSnap{
-            font-size: 2rem;
-        }
-
-        .down2{
-            font-size: 1.7rem;
-        }
-
-        .down3{
-            font-size: 1rem;
-        }
-
-        .down4{
-        width: 100%;
-        margin-left: 0px;
-    }
-
-        .hr{
-            margin-left: 10%;
-            width: 80%;
-        }
-
-        .about3{
-            text-align: center;
-            width: 100%;
-        }
-        
-        .aboute2{
-            margin-top: 15px;
-            gap: .2rem;
-            line-height: 22px;
-        }
-
-        .aboute3{
-            gap: .2rem;
-            line-height: 22px;
-        }
-
-        .conText{
-            font-size: larger;
-        }
-
-        .con{
-            display: flex;
-            flex-direction: column;
-            margin-top: 3%;
-            min-height: auto;
-        }
-
-        .gText {
-    opacity: 1;
-    transform: scale(1) translateY(-50%);
+/* Responsive positioning for drop zones */
+@media (min-width: 768px) {
+  [data-md-top] {
+    top: var(--md-top);
   }
-
-  .down{
-    background-color: rgb(81, 78, 78);
-  }
-
-  .wForm{
-    width: 80vw;
-  }
-
-
-  .conlod{
-    width: 9rem;
-    height: 38px;
-  }
-
-  .conlod1{
-    width: 12rem;
-  }
-
-  .conlod2{
-    border-radius: 10px;
-    width: 8rem;
-  }
-  .conlod3{
-    border-radius: 10px;
-    width: 10rem;
-    height: 48px;
-    margin-left: 1rem;
+  [data-md-left] {
+    left: var(--md-left);
   }
 }
 
-@media (min-width: 448px) and (max-width: 600px) {
-    .nave{
-        padding: 20px;
-    }
-    .nav li {
-            font-size: 3vw;
-            height: 23px;
-            justify-content: center;
-        }
-
-       .downSnap {
-         font-size: 2.3rem;
-         }
-
-        .myWork {
-            padding: 1vh .04rem;
-            
-        }
-
-        .myWork1{
-            margin-left: 4vw;
-        }
-
-        .myWork2{
-            margin-left: 13vw;
-            font-size: 3vw;
-        }
-
-        .myWork3{
-            margin-left: 8vw;
-            font-size: 2.5vw;
-            font: bold;
-        }
-
-        .myWork4{
-            margin-top: .3rem;
-            gap: 5vw;
-            font-size: .8rem;
-            padding-left: .02rem;
-        }
-
-        .myWork5{
-            height: 5rem;
-            width: 8rem;
-        }
-
-        .myWork6{
-            width: 12rem;
-        }
-
-        .myWork7{
-            padding-top: -5rem;
-        }
-
-        .myWork8{
-            font-size: 1rem;
-        }
-
-        .about1{
-            margin-left: 37vw;
-        }
-    
-        .about2{
-            padding: 13px 5vw;
-            display: flex;
-            flex-direction: column;
-            text-align: center; 
-            gap: 1rem;
-        }
-
-        .hr{
-            margin-left: 10%;
-            width: 80%;
-        }
-
-        .about3{
-            text-align: center;
-            width: 100%;
-        }
-        
-        .aboute2{
-            margin-top: 15px;
-            gap: .2rem;
-            line-height: 22px;
-        }
-
-        .aboute3{
-            gap: .2rem;
-            line-height: 22px;
-        }
-
-        .conText{
-            font-size: larger;
-        }
-
-        .con{
-            display: flex;
-            flex-direction: column;
-            margin-top: 3%;
-            min-height: auto;
-        }
-
-        .gText {
-    opacity: 1;
-    transform: scale(1) translateY(-50%);
+@media (min-width: 1024px) {
+  [data-lg-top] {
+    top: var(--lg-top);
   }
-
-  .down{
-    background-color: rgb(81, 78, 78);
-  }
-
-  .down2{
-    font-size: 2.2rem;
-  }
-
-  .down3
-  {
-    font-size: 1.1rem;
-    }
-
-    .down4{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0px;
-    }
-
-  .wForm{
-    width: 80vw;
-  }
-
-  .navLod{
-    width: 10%;
-    left: 32%;
-  }
-
-  .navLod1{
-    width: 10%;
-    left: 48%;
-  }
-  .navLod2{
-    width: 13%;
-    left: 62%;
-  }
-  .navLod3{
-    width: 13%;
-    left: 80%;
-  }
-
-  .conlod{
-    width: 9rem;
-    height: 38px;
-  }
-
-  .conlod1{
-    width: 12rem;
-  }
-
-  .conlod2{
-    border-radius: 10px;
-    width: 8rem;
-  }
-  .conlod3{
-    border-radius: 10px;
-    width: 10rem;
-    height: 48px;
-    margin-left: 1rem;
+  [data-lg-left] {
+    left: var(--lg-left);
   }
 }
 
-@media (min-width: 601px) and (max-width: 767px) {
-    .nav li{
-        font-size: 14px;
-    }
-
-    .landPhone{
-        height: 390px;
-    }
-
-    .myWork {
-            padding: 0 .04rem;
-        }
-
-        .myWork1{
-            margin-left: 14vw;
-            width: 50vw;
-        }
-
-        .myWork11{
-            margin-left: 18vw;
-            width: 50vw;
-        }
-
-        .myWork2{
-            width: 18vw;
-            font-size: .9rem;
-            margin-right: -7vw;
-        }
-
-        .myWork22{
-            width: 18vw;
-            font-size: .9rem;
-            margin-right: -7vw;
-        }
-
-        .myWork3{
-            margin: 0px;
-            height: 3rem;
-            width: 19vw;
-        }
-
-        .myWork33{
-            margin: 0px;
-            height: 13rem;
-            width: 63vw;
-        }
-
-        .myWork4{
-            width: 40vw;
-            font-size: .8rem;  
-        }
-
-        .myWork44{
-            width: 60vw;
-            font-size: 1rem;  
-        }
-
-        .workEmg{
-            padding: .5rem .2rem;
-            width: 100%;
-        }
-        .workEmg1{
-            width: 10%;
-            height: 10%;
-        }
-
-        .myWork5{
-            height: 15rem;
-            width: 28rem;
-            z-index: 30;
-        }
-
-        .myWork6{
-            width: 65vh;
-            z-index: 99;
-        }
-
-        .Screen{
-            position: absolute;
-            top: 153rem;
-            left: -2rem;
-        }
-
-        .screen11{
-            width: 100%;
-        }
-
-        .screen1{
-            position: absolute;
-            left: 44rem;
-        }
-
-        .myWork7{
-            padding-top: -5rem;
-        }
-
-        .myWork8{
-            font-size: 1rem;
-        }
-
-        .mCon{
-            padding: 5rem .5rem;
-        }
-
-        .wForm{
-            width: 45vw;
-        }
-
-                .about1{
-               margin-left: 37vw;
-                 }
-        
-                .about2 {
-                    padding: 13px 5vw;
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 1rem;
-                }
-        
-                .hr {
-                    margin-left: 10%;
-                    width: 80%;
-                }
-        
-                .about3 {
-                    text-align: center;
-                    width: 100%;
-                }
-        
-                .aboute2 {
-                    margin-top: 15px;
-                    gap: .2rem;
-                    line-height: 22px;
-                }
-        
-                .aboute3 {
-                    gap: .2rem;
-                    line-height: 22px;
-                }
-
-
-
+@media (min-width: 1280px) {
+  [data-xl-top] {
+    top: var(--xl-top);
+  }
+  [data-xl-left] {
+    left: var(--xl-left);
+  }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .nav li{
-        font-size: 14px;
-    }
-
-    .landPhone{
-        height: 390px;
-    }
-
-    .myWork {
-            padding: 1vh .04rem;
-        }
-
-        .myWork1 {
-            margin-left: 20vw;
-            width: 50vw;
-            }
-
-        .myWork11 {
-            margin-left: 22vw;
-            width: 50vw;
-        }
-    
-        .myWork2 {
-            width: 18vw;
-            font-size: .9rem;
-            margin-right: -7vw;
-        }
-    
-        .myWork22 {
-            width: 18vw;
-            font-size: .9rem;
-            margin-right: -7vw;
-        }
-    
-        .myWork3 {
-            margin: 0px;
-            height: 3rem;
-            width: 19vw;
-        }
-    
-        .myWork33 {
-            margin: 0px;
-            height: 14rem;
-            width: 58vw;
-        }
-    
-        .myWork4 {
-            width: 40vw;
-            font-size: .8rem;
-        }
-    
-        .myWork44 {
-            width: 60vw;
-            font-size: 1rem;
-        }
-    
-        .workEmg {
-            padding: .5rem .2rem;
-            width: 80%;
-        }
-    
-        .workEmg1 {
-            width: 10%;
-            height: 10%;
-        }
-    
-        .myWork5 {
-            height: 15rem;
-            width: 30rem;
-            z-index: 30;
-        }
-
-                .Screen {
-                    position: absolute;
-                    top: 153rem;
-                    left: -2rem;
-                }
-        
-                .screen11 {
-                    width: 100%;
-                }
-        
-                .screen1 {
-                    position: absolute;
-                    left: 57.5rem;
-                }
-
-        .myWork6{
-            width: 30rem;
-        }
-
-        .zoomIn{
-            position: absolute;
-            top: 1rem;
-            left: 43rem;
-        }
-
-        .zoomIn1{
-            font-size: .8rem;
-        }
-
-        .zoomIn2{
-            font-size: .8rem;
-            margin-left: .4rem;
-        }
-
-        .myWork7{
-            padding-top: -5rem;
-        }
-
-        .myWork8{
-            font-size: 1rem;
-        }
-
-        .wForm{
-            width: 42vw;
-        }
-
-            .about1{
-            margin-left: 41vw;
-        }
-        
-                .about2 {
-                    padding: 13px 5vw;
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 1rem;
-                }
-        
-                .hr {
-                    margin-left: 10%;
-                    width: 80%;
-                }
-        
-                .about3 {
-                    text-align: center;
-                    width: 100%;
-                }
-        
-                .aboute2 {
-                    margin-top: 15px;
-                    gap: .2rem;
-                    line-height: 22px;
-                }
-        
-                .aboute3 {
-                    gap: .2rem;
-                    line-height: 22px;
-                }
+.eagle-lake-regular {
+  font-family: "Eagle Lake", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    .nav li{
-        font-size: 16px;
-    }
-
-       .about1{
-            margin-left: 42vw;
-            font-size: 2rem;
-        }
-
-    .myWork {
-            padding: 1vh .04rem;
-        }
-
-                .myWork1 {
-                    margin-left: 27vw;
-                    width: 50vw;
-                }
-        
-                .myWork11 {
-                    margin-left: 30vw;
-                    width: 50vw;
-                }
-        
-                .myWork2 {
-                    width: 18vw;
-                    font-size: .9rem;
-                    margin-right: -5vw;
-                }
-        
-                .myWork22 {
-                    width: 18vw;
-                    font-size: .9rem;
-                    margin-right: -5vw;
-                }
-        
-                .myWork3 {
-                    margin: 0px;
-                    height: 3rem;
-                    width: 19vw;
-                }
-        
-                .myWork33 {
-                    margin: 0px;
-                    height: 15rem;
-                    width: 53vw;
-                }
-        
-                .myWork4 {
-                    width: 40vw;
-                    font-size: .8rem;
-                }
-        
-                .myWork44 {
-                    width: 60vw;
-                    font-size: 1rem;
-                }
-        
-                .workEmg {
-                    padding: .5rem .2rem;
-                    width: 90%;
-                    margin-left: 5rem;
-                }
-        
-                .workEmg1 {
-                    width: 10%;
-                    height: 10%;
-                }
-
-                .workEmg2 {
-                    font-size: 1.2rem;
-                }
-        
-                .myWork5 {
-                    height: 15rem;
-                    width: 30rem;
-                    z-index: 30;
-                }
-        
-                .myWork6 {
-                    width: 30rem;
-                }
-
-                                .Screen {
-                                    position: absolute;
-                                    top: 153rem;
-                                    left: .3rem;
-                                }
-                
-                                .screen11 {
-                                    width: 100%;
-                                }
-                
-                                .screen1 {
-                                    position: absolute;
-                                    left: 62rem;
-                                }
-
-                .zoomIn {
-                    position: absolute;
-                    top: 1rem;
-                    left: 46rem;
-                }
-                
-                .zoomIn1 {
-                    font-size: .8rem;
-                }
-                
-                .zoomIn2 {
-                    font-size: .8rem;
-                    margin-left: .4rem;
-                    }
-
-        .myWork7{
-            padding-top: -5rem;
-        }
-
-        .myWork8{
-            font-size: 1rem;
-        }
-
-        .wForm{
-            width: 36vw;
-        }
-
-                
-
+.cookie {
+  font-family: "Cookie", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
-@media (min-width: 1200px) and (max-width: 1399px) {
-    .nav li{
-        font-size: 16px;
-    }
+.aref-ruqaa-ink-regular {
+  font-family: "Aref Ruqaa Ink", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-       .about1{
-            margin-left: 45vw;
-            font-size: 1.7rem;
-        }
+.aref-ruqaa-ink-bold {
+  font-family: "Aref Ruqaa Ink", serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
-    .myWork {
-            padding: 2vh .04rem;
-        }
+.bungee-spice-regular {
+  font-family: "Bungee Spice", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-    .myWork1 {
-                margin-left: 30vw;
-                width: 50vw;
-         }
-                
-    .myWork11 {
-             margin-left: 33vw;
-             width: 50vw;
-    }
-                
-    .myWork2 {
-             width: 18vw;
-                font-size: .9rem;
-                margin-right: -5vw;
-            }
-                
-    .myWork22 {
-            width: 18vw;
-            font-size: .9rem;
-            margin-right: -3vw;
-        }
-                
-        .myWork3 {
-         margin: 0px;
-         height: 3rem;
-         width: 15vw;
-        }
-                
-        .myWork33 {
-             margin: 0px;
-             height: 15rem;
-             width: 47vw;
-         }
-                
-            .myWork4 {
-             width: 40vw;
-             font-size: .8rem;
-            }
-                
-            .myWork44 {
-             width: 50vw;
-             font-size: 1rem;
-         }
-                
-         .workEmg {
-             padding: .5rem .2rem;
-             width: 90%;
-             margin-left: 7rem;
-         }
-                
-         .workEmg1 {
-             width: 10%;
-             height: 10%;
-         }
-                
-            .workEmg2 {
-                font-size: 1.2rem;
-         }
-                
-         .myWork5 {
-             height: 15rem;
-             width: 30rem;
-             z-index: 30;
-         }
-                
-         .myWork6 {
-             width: 30rem;
-         }
+.iansui {
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
-         .Screen {
-             position: absolute;
-             top: 153rem;
-             left: .3rem;
-            }
-                
-         .screen11 {
-             width: 100%;
-         }
-                
-         .screen1 {
-             position: absolute;
-             left: 74rem;
-         }
-                
-         .zoomIn {
-              position: absolute;
-             top: 1rem;
-             left: 58rem;
-         }
-                
-         .zoomIn1 {
-             font-size: .8rem;
-         }
-                
-         .zoomIn2 {
-             font-size: .8rem;
-             margin-left: .4rem;
-         }
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-        .myWork7{
-            padding-top: -5rem;
-        }
+.yatra-one-regular {
+  font-family: "Yatra One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
-        .myWork8{
-            font-size: 1.5rem;
-        }
+.anton {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-        .wForm{
-            width: 33vw;
-        }
+.days {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.maamli {
+  font-family: "Ga Maamli", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.koulen {
+  font-family: "Koulen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lemon {
+  font-family: "Lemon", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.rowdies-light {
+  font-family: "Rowdies", sans-serif;
+  font-style: normal;
+}
+
+.karla-light {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rowdies {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rowdies-bold {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* From Uiverse.io by uxRakhal */ 
+.pl {
+  width: 6em;
+  height: 6em;
+}
+
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+  stroke: #f42f25;
+}
+
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #ffdd00;
+}
+
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #255ff4;
+}
+
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #2cf425;
+}
+
+/* Animations */
+@keyframes ringA {
+  from,
+  4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+
+  40%,
+  54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+
+  90%,
+  to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+
+@keyframes ringB {
+  from,
+  12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+
+  48%,
+  62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+
+  98%,
+  to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  36%,
+  58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  94%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+@keyframes ringD {
+  from,
+  8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  44%,
+  50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  86%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
 }
