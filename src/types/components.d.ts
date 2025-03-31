@@ -1,12 +1,14 @@
-declare module "*.jsx" {
-  import { ReactElement } from "react";
-  const component: ReactElement;
+declare module "../components/CursorParticles" {
+  const component: React.FC;
   export default component;
 }
 
-declare module "../components/CursorParticles" {
-  import { ReactElement } from "react";
-  const component: ReactElement;
+declare module "../components/ButtonWrapper" {
+  const component: React.FC;
   export default component;
 }
-// Add similar declarations for other components
+
+declare module "../components/SparkleButton" {
+  const component: React.FC;
+  export default component;
+}
