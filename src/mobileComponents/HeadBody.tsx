@@ -20,7 +20,7 @@ const HeadBody = () => {
   };
 
   return (
-    <div className="w-full h-[30vh] mt-7 flex items-center justify-center text-white">
+    <div className="w-full h-[27vh] mt-7 flex items-center justify-center text-white">
       
       <div
         className="backdrop-blur-sm bg-black/30 w-full py-2 px-4 flex flex-col items-center justify-center rounded-lg gap-2"

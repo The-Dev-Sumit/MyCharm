@@ -32,6 +32,8 @@ const App: React.FC = () => {
   const [hasError, setHasError] = useState<boolean>(false);
   const [isTyping, setIsTyping] = useState<boolean>(false);
 
+  const ctxRef = useRef<gsap.Context>();
+
   const projects = [
     {
       type: "video" as const,
@@ -113,8 +115,8 @@ const App: React.FC = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: component,
-            start: "top 30%", // Start animation when top of component is 80% in viewport
-            end: "bottom 50%", // End when bottom is 20% out of viewport
+            start: "top 80%", // Start animation when top of component is 80% in viewport
+            end: "bottom 20%", // End when bottom is 20% out of viewport
             toggleActions: "play none none reverse", // Play on enter, reverse on leave
             // markers: true, // Uncomment for debugging
           },
@@ -202,12 +204,21 @@ const App: React.FC = () => {
             <div ref={worksRef}>
               <Works items={projects} />
             </div>
-            <div ref={boardRef}>
-              <Board setIsTyping={setIsTyping} />
-            </div>
-            <div ref={mySkillsRef}>
-              <MySkills />
-            </div>
+            {isMobile ? (
+              <>
+                <Board setIsTyping={setIsTyping} />
+                <MySkills />
+              </>
+            ) : (
+              <>
+                <div ref={boardRef}>
+                  <Board setIsTyping={setIsTyping} />
+                </div>
+                <div ref={mySkillsRef}>
+                  <MySkills />
+                </div>
+              </>
+            )}
           </div>
         </ErrorBoundary>
       )}

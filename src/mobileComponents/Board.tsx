@@ -148,7 +148,7 @@ const Board: React.FC<BoardProps> = ({ setIsTyping }) => {
   };
 
   return (
-    <div className="flex flex-col items-center px-3 w-full h-[86vh] md:h-[98vh] lg:h-[110vh] py-5">
+    <div className="flex flex-col items-center px-3 w-full h-[86vh] md:h-[98vh] lg:h-[110vh] py-5 z-40">
       <h2 className="text-[1.4rem] md:text-[1.8rem] font-bold text-center poppins-medium-italic py-6 text-amber-100">
         <span className="text-indigo-400">Pinned Ideas</span>: Projects I'm
         Working On
