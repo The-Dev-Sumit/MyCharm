@@ -1,26 +1,24 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": false,
+    "target": "ESNext",
+    "module": "ESNext",
     "jsx": "react-jsx",
-    "target": "es6",
-    "module": "esnext",
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "src/*": ["src/*"]
     },
-    "isolatedModules": true
+
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
-  "include": ["src/**/*", "src/types.d.ts"],
-   "exclude": ["node_modules", "**/*.js"],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "include": ["src/**/*", "../types.d.ts"],
+  "exclude": ["node_modules"]
 }

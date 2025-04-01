@@ -7,7 +7,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "composite": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,5 +24,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "baseUrl": ".",
+  "paths": {
+    "src/*": ["src/*"]
+  },
 }

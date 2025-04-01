@@ -10,6 +10,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MySkillsForMobile from "./mobileComponents/MySkillsForMobile";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,8 +32,6 @@ const App: React.FC = () => {
   const mySkillsRef = useRef<HTMLDivElement>(null);
   const [hasError, setHasError] = useState<boolean>(false);
   const [isTyping, setIsTyping] = useState<boolean>(false);
-
-  const ctxRef = useRef<gsap.Context>();
 
   const projects = [
     {
@@ -188,7 +187,7 @@ const App: React.FC = () => {
         </div>
       ) : (
         <ErrorBoundary onError={setHasError}>
-          <div className="w-full min-h-screen bg-black relative overflow-hidden">
+          <div className="w-full z-40 min-h-screen bg-black relative overflow-hidden">
             {!isMobile && !hasError && (
               <CursorParticles
                 screenWidth={window.innerWidth}
@@ -207,7 +206,7 @@ const App: React.FC = () => {
             {isMobile ? (
               <>
                 <Board setIsTyping={setIsTyping} />
-                <MySkills />
+                <MySkillsForMobile />
               </>
             ) : (
               <>

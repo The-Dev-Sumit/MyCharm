@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import ReactPlayer from "react-player";
@@ -117,7 +117,7 @@ const Works: React.FC<WorksProps> = ({ items }) => {
               className="absolute left-2 top-1/2 transform -translate-y-1/2 z-50  rounded-full p-2 text-white disabled:opacity-30">
               <FontAwesomeIcon
                 icon={faCaretLeft}
-                size={24}
+                size="lg"
                 style={{ color: "#4923d1" }}
               />
             </button>

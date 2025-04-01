@@ -1,29 +1,34 @@
-// Allow all JSX files
-declare module "*.jsx" {
+// types.d.ts
+declare module "*.js" {
   import { ReactElement } from "react";
-  const component: React.FC;
-  export default component;
+  const value: ReactElement;
+  export default value;
 }
 
-// Specific component declarations
-declare module "../components/CursorParticles" {
-  const component: React.FC;
-  export default component;
-}
-
-declare module "../components/ButtonWrapper" {
-  const component: React.FC<{
-    onClick?: () => void;
-    text?: string;
-    href?: string;
+declare module "src/components/CursorParticles" {
+  import { FC } from "react";
+  const CursorParticles: FC<{
+    screenWidth?: number;
+    hasError?: boolean;
   }>;
-  export default component;
+  export default CursorParticles;
 }
 
-declare module "../components/SparkleButton" {
-  const component: React.FC<{
-    onClick?: () => void;
-    text?: string;
+declare module "src/components/ButtonWrapper" {
+  import { FC } from "react";
+  const ButtonWrapper: FC<{
+    href: string;
+    text: string;
+    className?: string;
   }>;
-  export default component;
+  export default ButtonWrapper;
+}
+
+declare module "src/components/SparkleButton" {
+  import { FC } from "react";
+  const SparkleButton: FC<{
+    href: string;
+    text: string;
+  }>;
+  export default SparkleButton;
 }
