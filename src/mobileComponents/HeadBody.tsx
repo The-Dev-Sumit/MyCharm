@@ -30,7 +30,7 @@ const HeadBody = () => {
           transition: "all 0.3s ease-out",
         }}>
         <BlurText
-          text="Welcome to my digital presence"
+          text="Welcome to my digital space"
           animateBy="words"
           direction="top"
           delay={130}
