@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Board from "./mobileComponents/Board";
 import HeadBody from "./mobileComponents/HeadBody";
 import AboutMe from "./mobileComponents/AboutMe";
-import Works from "./mobileComponents/Works";
 import FourthProject from "./assets/images/Screenshot.png";
 import MySkills from "./mobileComponents/MySkills";
 import CursorParticles from "./components/CursorParticles"
@@ -11,6 +10,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MySkillsForMobile from "./mobileComponents/MySkillsForMobile";
+import MyWorks from "./mobileComponents/MyWorks";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,9 +22,15 @@ const SecondProject =
 const ThirdProject =
   "https://www.youtube.com/embed/E6YPc_Jb1qs?si=U3FVhXju0UAexXRg";
 
+
+  interface ProjectLinks {
+    [key: string]: string;
+  }
+
 const App: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [projectLinks, setProjectLinks] = useState<ProjectLinks | null>(null);
 
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const worksRef = useRef<HTMLDivElement>(null);
@@ -32,6 +38,34 @@ const App: React.FC = () => {
   const mySkillsRef = useRef<HTMLDivElement>(null);
   const [hasError, setHasError] = useState<boolean>(false);
   const [isTyping, setIsTyping] = useState<boolean>(false);
+
+
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        const response = await fetch(
+          "https://api.jsonbin.io/v3/b/67ed76908561e97a50f7853a",
+          {
+            headers: {
+              "X-Master-Key":
+                "$2a$10$8lN9jglX2MyremXQgBZ1AuSxtjqHrxfbmSJcfa4eLCdNfhgEdXSt.",
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        setProjectLinks(data.record.CodeSnapAppLinks);
+      } catch (error) {
+        console.error("Failed to fetch links:", error);
+        setProjectLinks({
+          download:
+            "https://github.com/The-Dev-Sumit/CodeSnapApp/releases/download/MyApp/CodeSnap-1-v-win-x64.7z",
+        });
+      } 
+    };
+
+    fetchLinks();
+  }, []);
 
   const projects = [
     {
@@ -70,7 +104,7 @@ const App: React.FC = () => {
       title: "My First Desktop App: CodeSnap",
       description:
         "This is my first ever Desktop App, using Javascript and the name is CodeSnap. A simple and easy to use code editor were you can write 4 languages like - c, c++, js, python. And this is an offline code editor.",
-      link: "https://github.com/The-Dev-Sumit/CodeSnapApp/releases/download/MyApp/CodeSnap-1-v-win-x64.7z",
+      link: projectLinks?.download,
       linkText: "Download for Windows",
       date: "Date: 13-02-2025",
     },
@@ -201,7 +235,7 @@ const App: React.FC = () => {
               <AboutMe isMobile={isMobile} />
             </div>
             <div ref={worksRef}>
-              <Works items={projects} />
+              <MyWorks items={projects} />
             </div>
             {isMobile ? (
               <>

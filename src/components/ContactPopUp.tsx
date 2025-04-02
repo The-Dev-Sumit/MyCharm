@@ -162,7 +162,7 @@ const ContactPopUp: React.FC<ContactPopupProps> = ({ onClose }) => {
                   />
                 </div>
 
-                <div className="ml-8">
+                <div className="flex justify-center">
                   <button
                     type="submit"
                     className="hover:bg-gray-950 bg-transparent text-white hover:border-1 hover:border-cyan-700 py-2 px-6 rounded-md flex items-center gap-2 transition-colors duration-100">

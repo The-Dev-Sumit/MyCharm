@@ -3,6 +3,14 @@
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
+.swiper-slide {
+  width: 100% !important; /* Ensure each slide takes full width */
+  box-sizing: border-box; /* Prevent padding/margin issues */
+}
+
+.swiper {
+  padding: 0 10px; /* Ensure padding for spacing */
+}
 
 ::-webkit-scrollbar {
     width: 8px;
