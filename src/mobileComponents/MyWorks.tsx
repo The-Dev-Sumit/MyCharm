@@ -63,7 +63,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ items }) => {
   return (
     <div className="w-full select-none md:py-[0.5rem] py-[0.8rem] px-4">
       <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-white text-2xl lg:text-3xl xl:text-4xl md:text-3xl md:py-2 lg:py-3 xl:py-4 tracking-wider text-center yatra-one-regular">
+        <h2 className="text-white text-[2rem] lg:text-3xl xl:text-[2.6rem] md:text-3xl md:py-2 lg:py-3 xl:py-4 tracking-wider text-center yatra-one-regular">
           My <span className="text-indigo-400">Works</span>
         </h2>
 

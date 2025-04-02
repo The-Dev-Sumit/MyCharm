@@ -70,7 +70,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ isMobile }) => {
         <br />
         {/* Right Side - Description */}
         <div className="text-center md:mb-4 w-[80vw] md:w-[48vw] lg:w-[45vw]">
-          <h3 className="text-gray-200 text-[1.4rem] xl:text-[2rem] xl:py-4 md:text-[2rem] bebas-neue-regular tracking-widest ">
+          <h3 className="text-gray-200 text-[2rem] xl:text-[2.8rem] xl:py-4 md:text-[2.3rem] bebas-neue-regular tracking-widest ">
             <span className="text-indigo-400">About</span> Me
           </h3>
           <p className="text-gray-300 text-[.8rem] md:text-[.9rem] xl:text-[1rem] leading-relaxed karla-light">

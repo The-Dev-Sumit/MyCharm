@@ -21,7 +21,6 @@ const HeadBody = () => {
 
   return (
     <div className="w-full h-[27vh] mt-7 flex items-center justify-center text-white">
-      
       <div
         className="backdrop-blur-sm bg-black/30 w-full py-2 px-4 flex flex-col items-center justify-center rounded-lg gap-2"
         style={{
@@ -34,7 +33,7 @@ const HeadBody = () => {
           animateBy="words"
           direction="top"
           delay={130}
-          className="text-[4.5vw] md:text-[3.5vw] lg:text-[2.8vw] tracking-wide drop-shadow-md bungee-spice-regular"
+          className="text-[5.1vw] md:text-[3.5vw] lg:text-[2.8vw] tracking-wide drop-shadow-md bungee-spice-regular"
           onAnimationComplete={handleComplete}
         />
         <p className="text-center iansui capitalize md:w-[70vw] lg:w-[70vw] w-[85vw] tracking-wide border-none md:text-[.9rem] lg:text-[1rem] text-[.68rem]">
