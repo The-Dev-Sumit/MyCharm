@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Board from "./mobileComponents/Board";
 import HeadBody from "./mobileComponents/HeadBody";
 import AboutMe from "./mobileComponents/AboutMe";
-import FourthProject from "./assets/images/Screenshot.png";
 import MySkills from "./mobileComponents/MySkills";
 import CursorParticles from "./components/CursorParticles"
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -21,6 +20,7 @@ const SecondProject =
   "https://www.youtube.com/embed/iwlj7uSlyOk?si=KvwoPD98MOSxS77m";
 const ThirdProject =
   "https://www.youtube.com/embed/E6YPc_Jb1qs?si=U3FVhXju0UAexXRg";
+const FourthProject = "https://www.youtube.com/watch?v=TiDXEhyNtX8";
 
 
   interface ProjectLinks {
@@ -99,7 +99,7 @@ const App: React.FC = () => {
       date: "Date: 03-02-2024",
     },
     {
-      type: "image" as const,
+      type: "video" as const,
       content: FourthProject,
       title: "My First Desktop App: CodeSnap",
       description:
