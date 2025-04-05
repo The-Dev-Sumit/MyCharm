@@ -79,7 +79,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ items }) => {
               key={index}
               className={`${
                 isMobile ? "flex-none snap-center" : "flex"
-              }  w-[85vw] md:w-full border-2 border-gray-500/60 p-2 md:hover:scale-105 h-[55vh] md:h-[65vh] cursor-pointer transition-all duration-300 rounded-lg overflow-hidden flex-col`}>
+              }  w-[85vw] md:w-full border-2 border-gray-500/60 p-2 md:hover:scale-105 py-7 cursor-pointer transition-all duration-300 rounded-lg overflow-hidden flex-col`}>
               {item.date && (
                 <p className="text-white/90 text-sm w-full tracking-wide mb-2 flex justify-end font-aref pr-2">
                   {item.date}
@@ -134,18 +134,20 @@ const MyWorks: React.FC<MyWorksProps> = ({ items }) => {
                     {item.description}
                   </p>
                 )}
-                {item.link &&
-                  (isMobile ? (
-                    <SparkleButton
-                      href={item.link}
-                      text={item.linkText || "View Project"}
-                    />
-                  ) : (
-                    <ButtonWrapper
-                      href={item.link}
-                      text={item.linkText || "View Project"}
-                    />
-                  ))}
+                <div className="p-2">
+                  {item.link &&
+                    (isMobile ? (
+                      <SparkleButton
+                        href={item.link}
+                        text={item.linkText || "View Project"}
+                      />
+                    ) : (
+                      <ButtonWrapper
+                        href={item.link}
+                        text={item.linkText || "View Project"}
+                      />
+                    ))}
+                </div>
               </div>
             </div>
           ))}
