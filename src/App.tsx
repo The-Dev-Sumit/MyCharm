@@ -37,7 +37,6 @@ const App: React.FC = () => {
   const boardRef = useRef<HTMLDivElement>(null);
   const mySkillsRef = useRef<HTMLDivElement>(null);
   const [hasError, setHasError] = useState<boolean>(false);
-  const [isTyping, setIsTyping] = useState<boolean>(false);
 
 
   useEffect(() => {
@@ -128,7 +127,7 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoading || hasError || isTyping) return; 
+    if (isLoading || hasError) return; 
 
     const components = [
       aboutMeRef.current,
@@ -161,7 +160,7 @@ const App: React.FC = () => {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [isLoading, hasError, isTyping]);
+  }, [isLoading, hasError]);
 
   useEffect(() => {
     const handleError = () => setHasError(true);
@@ -239,13 +238,13 @@ const App: React.FC = () => {
             </div>
             {isMobile ? (
               <>
-                <Board setIsTyping={setIsTyping} />
+                <Board />
                 <MySkillsForMobile />
               </>
             ) : (
               <>
                 <div ref={boardRef}>
-                  <Board setIsTyping={setIsTyping} />
+                  <Board />
                 </div>
                 <div ref={mySkillsRef}>
                   <MySkills />
