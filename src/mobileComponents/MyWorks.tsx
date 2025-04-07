@@ -5,6 +5,7 @@ import SparkleButton from "../components/SparkleButton";
 
 interface MyWorkItem {
   type: "video" | "image" | "text";
+  thumbnail?: string;
   content: string;
   title?: string;
   description?: string;
@@ -93,20 +94,7 @@ const MyWorks: React.FC<MyWorksProps> = ({ items }) => {
                     height="100%"
                     controls
                     playing={false}
-                    light={true}
-                    config={{
-                      youtube: {
-                        playerVars: {
-                          origin: window.location.origin,
-                          modestbranding: 1,
-                          showinfo: 0,
-                          rel: 0,
-                          controls: 1,
-                          iv_load_policy: 3,
-                          fs: 1,
-                        },
-                      },
-                    }}
+                    light={item.thumbnail}
                   />
                 )}
                 {item.type === "image" && (

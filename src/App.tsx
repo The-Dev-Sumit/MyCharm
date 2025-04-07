@@ -15,12 +15,14 @@ import MyWorks from "./mobileComponents/MyWorks";
 gsap.registerPlugin(ScrollTrigger);
 
 
-const FirstProject = "https://www.youtube.com/watch?v=epoW9eXuYbk";
+const FirstProject =
+  "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744006804/Web_practice_1_-_Google_Chrome_2023-10-12_19-39-39_fmptjb.mp4";
 const SecondProject =
-  "https://www.youtube.com/embed/iwlj7uSlyOk?si=KvwoPD98MOSxS77m";
+  "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744007384/Welcome_TGS_-_Google_Chrome_2024-01-28_20-53-07_hjgscy.mov";
 const ThirdProject =
-  "https://www.youtube.com/embed/E6YPc_Jb1qs?si=U3FVhXju0UAexXRg";
-const FourthProject = "https://www.youtube.com/watch?v=TiDXEhyNtX8";
+  "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744006812/20250114153652_epobb2.mp4";
+const FourthProject =
+  "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744004985/CodeSnap_video_eoijyf.mp4";
 
 
   interface ProjectLinks {
@@ -71,6 +73,8 @@ const App: React.FC = () => {
       type: "video" as const,
       content: FirstProject,
       title: "My First Frontend Website",
+      thumbnail:
+        "https://res.cloudinary.com/dmmzqpfgg/image/upload/v1744007663/Screenshot_2025-04-07_120346_t1fdsn.png",
       description:
         "This is my first frontend website, it is build in html and css and little bit of javascript. This is my first ever project to learn things, from here my journey started.",
       link: undefined,
@@ -81,6 +85,8 @@ const App: React.FC = () => {
       type: "video" as const,
       content: SecondProject,
       title: "My Second Fullstack Website",
+      thumbnail:
+        "https://res.cloudinary.com/dmmzqpfgg/image/upload/v1744008031/Screenshot_2025-04-07_121010_ooc2tq.png",
       description:
         "This is my second fullstack website, using html, css and javascript with database and backend, this project i made before our exams, a basic test portal type project, which my friends used. I know it is childish but I fun with whatever i do.",
       link: undefined,
@@ -91,6 +97,8 @@ const App: React.FC = () => {
       type: "video" as const,
       content: ThirdProject,
       title: " My Third Project: Snake Game",
+      thumbnail:
+        "https://res.cloudinary.com/dmmzqpfgg/image/upload/v1744008176/Screenshot_2025-04-07_121236_drh7bk.png",
       description:
         " This is my third project and first game using java language for the first time, this is a basic Snake Game, i wanted to try something new.",
       link: undefined,
@@ -101,6 +109,8 @@ const App: React.FC = () => {
       type: "video" as const,
       content: FourthProject,
       title: "My First Desktop App: CodeSnap",
+      thumbnail:
+        "https://res.cloudinary.com/dmmzqpfgg/image/upload/v1744008346/Screenshot_2025-04-07_121510_xem3rn.png",
       description:
         "This is my first ever Desktop App, using Javascript and the name is CodeSnap. A simple and easy to use code editor were you can write 4 languages like - c, c++, js, python. And this is an offline code editor.",
       link: projectLinks?.download,
