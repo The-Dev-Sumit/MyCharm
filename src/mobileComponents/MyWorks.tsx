@@ -6,7 +6,7 @@ import SparkleButton from "../components/SparkleButton";
 interface MyWorkItem {
   type: "video" | "image" | "text";
   thumbnail?: string;
-  content: string;
+  content?: string;
   title?: string;
   description?: string;
   link?: string;

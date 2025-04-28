@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const Board: React.FC = () => {
 
-  const noteVisible: boolean = true;
+  const noteVisible: boolean = false;
   const text = "PlayGround for coders"; 
 
   const dropZones = [

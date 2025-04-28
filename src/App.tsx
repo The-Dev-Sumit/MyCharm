@@ -3,17 +3,14 @@ import Board from "./mobileComponents/Board";
 import HeadBody from "./mobileComponents/HeadBody";
 import AboutMe from "./mobileComponents/AboutMe";
 import MySkills from "./mobileComponents/MySkills";
-import CursorParticles from "./components/CursorParticles"
+import CursorParticles from "./components/CursorParticles";
 import ErrorBoundary from "./components/ErrorBoundary";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MySkillsForMobile from "./mobileComponents/MySkillsForMobile";
 import MyWorks from "./mobileComponents/MyWorks";
 
-
 gsap.registerPlugin(ScrollTrigger);
-
 
 const FirstProject =
   "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744006804/Web_practice_1_-_Google_Chrome_2023-10-12_19-39-39_fmptjb.mp4";
@@ -23,11 +20,14 @@ const ThirdProject =
   "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744006812/20250114153652_epobb2.mp4";
 const FourthProject =
   "https://res.cloudinary.com/dmmzqpfgg/video/upload/v1744004985/CodeSnap_video_eoijyf.mp4";
+const FifthProject =
+  "https://res.cloudinary.com/dmmzqpfgg/image/upload/v1745854135/uivora_view_yibqds.png";
 
+const UivoraLink = "https://uivora.vercel.app/";
 
-  interface ProjectLinks {
-    [key: string]: string;
-  }
+interface ProjectLinks {
+  [key: string]: string;
+}
 
 const App: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -39,7 +39,6 @@ const App: React.FC = () => {
   const boardRef = useRef<HTMLDivElement>(null);
   const mySkillsRef = useRef<HTMLDivElement>(null);
   const [hasError, setHasError] = useState<boolean>(false);
-
 
   useEffect(() => {
     const fetchLinks = async () => {
@@ -62,7 +61,7 @@ const App: React.FC = () => {
           download:
             "https://github.com/The-Dev-Sumit/CodeSnapApp/releases/download/MyApp/CodeSnap-1-v-win-x64.7z",
         });
-      } 
+      }
     };
 
     fetchLinks();
@@ -117,6 +116,16 @@ const App: React.FC = () => {
       linkText: "Download for Windows",
       date: "Date: 13-02-2025",
     },
+    {
+      type: "image" as const,
+      content: FifthProject,
+      title: "My First Nextjs Project: UIVORA",
+      description:
+        "UIVORA is my first Next.js project — an open-source library where you can create and share custom UI elements for websites, and also contribute your own to help the community grow.",
+      link: UivoraLink,
+      linkText: "UIVORA Link",
+      date: "Date: 27-04-2025",
+    },
   ];
 
   useEffect(() => {
@@ -137,7 +146,7 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoading || hasError) return; 
+    if (isLoading || hasError) return;
 
     const components = [
       aboutMeRef.current,
@@ -177,7 +186,6 @@ const App: React.FC = () => {
     window.addEventListener("error", handleError);
     return () => window.removeEventListener("error", handleError);
   }, []);
-
 
   return (
     <>
