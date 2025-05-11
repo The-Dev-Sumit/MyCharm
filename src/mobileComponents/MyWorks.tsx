@@ -12,6 +12,7 @@ interface MyWorkItem {
   link?: string;
   linkText?: string;
   date?: string;
+  lastUpdated?: string;
 }
 
 interface MyWorksProps {
@@ -81,11 +82,18 @@ const MyWorks: React.FC<MyWorksProps> = ({ items }) => {
               className={`${
                 isMobile ? "flex-none snap-center" : "flex"
               }  w-[85vw] md:w-full border-2 border-gray-500/60 p-2 md:hover:scale-105 py-7 cursor-pointer transition-all duration-300 rounded-lg overflow-hidden flex-col`}>
-              {item.date && (
-                <p className="text-white/90 text-sm w-full tracking-wide mb-2 flex justify-end font-aref pr-2">
-                  {item.date}
-                </p>
-              )}
+              <div className="flex justify-between w-full mb-2">
+                {item.date && (
+                  <p className="text-white/90 text-sm  tracking-wide font-aref ">
+                    {item.date}
+                  </p>
+                )}
+                {item.lastUpdated && (
+                  <p className="text-white/90 text-sm  tracking-wide font-aref ">
+                    {item.lastUpdated}
+                  </p>
+                )}
+              </div>
               <div className="w-full h-[25vh] md:h-[28vh] rounded-lg">
                 {item.type === "video" && (
                   <ReactPlayer

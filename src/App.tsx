@@ -115,6 +115,7 @@ const App: React.FC = () => {
       link: projectLinks?.download,
       linkText: "Download for Windows",
       date: "Date: 13-02-2025",
+      lastUpdated: "Last Updated: 11-05-2025",
     },
     {
       type: "image" as const,
